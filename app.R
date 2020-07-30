@@ -25,7 +25,8 @@ library(plyr)
 library(DT)
 library(feather)
 
-library(highcharter)
+library(heatmaply)
+library(tidyverse)
 
 
 
@@ -155,6 +156,19 @@ library(highcharter)
   
   
   
+  # heat map data
+  
+  hm = regions %>% select(area_name, day, cases) %>%
+    spread(day, cases) %>% ungroup()
+  
+  hm = hm %>% remove_rownames %>%
+    column_to_rownames(var="area_name")
+  
+  
+  hm[is.na(hm)] = 0
+  
+  
+  
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------  
 
 
@@ -196,12 +210,13 @@ ui <- dashboardPage(
     fluidRow(      
       box(width = 6,
           title = "Cases per 100,000 population in last 2 weeks",
-        highchartOutput(outputId = "plot_map", height = "900px")),
+          plotlyOutput(outputId = "plot_map", height = "400px")
+          ),
     
       box(width = 6,
           title = "Change in cases in last 2 weeks", status = "primary",
           div(style = 'overflow-x: scroll', 
-              DT::dataTableOutput("table", height = "900px")))
+              DT::dataTableOutput("table", height = "400px")))
       ),
     
     fluidRow(
@@ -345,21 +360,12 @@ server <- function(input, output) {
   
   
   
-  output$plot_map <- renderHighchart({    
+  output$plot_map <- renderPlotly({    
   
-  g =
-    hcmap("countries/gb/gb-all", data = mapdata, value = "cases_per_100k_past2weeks",
-        joinBy = c("hc-a2", "hc-a2"), name = "cases per 100.000 population",
-        dataLabels = list(enabled = TRUE, format = '{point.name}'),
-        borderColor = "#7d7d7d", borderWidth = 0.1,
-        tooltip = list(valueDecimals = 0, valueSuffix = " cases")) %>%
-    
-    hc_chart(zoomType = "xy") %>%
-    hc_yAxis(height = 800) %>%
-    hc_colorAxis(
-      minColor = "#F5C5B7",
-      maxColor = "#7E2911")
-  g
+  
+  heatmaply(hm, Colv = NULL,
+            xlab = "date", ylab = "", main = "Timeline of daily cases per region")
+  
   })  
   
 
