@@ -1,0 +1,12 @@
+name: Covid-19_2
+title: Covid-19_2
+username:
+account: dataiseverywhere
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 2617961
+bundleId: 3452490
+url: https://dataiseverywhere.shinyapps.io/Covid-19_2/
+when: 1596064934.89275
+asMultiple: FALSE
+asStatic: FALSE

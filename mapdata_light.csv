@@ -1,0 +1,234 @@
+hc-group,hc-key,hc-a2,labelrank,iso_3166_2,hasc,country,type-en,region,woe-id,longitude,subregion,woe-name,fips,latitude,postal-code,type,name,alt-name,woe-label,id
+admin1,gb-ay,AY,9,GB-AGY,GB.AY,United Kingdom,Unitary Authority (wales,East Wales,12602211,-4.3787,North Wales,Anglesey County,UK93,53.2996,AY,Unitary Authority (wales),Anglesey,NA,NA,
+admin1,gb-3270,OR,9,GB-ORK,GB.MO,United Kingdom,Unitary District,Highlands and Islands,12602205,-3.15683,The Islands,Orkney,UK83,58.9715,NA,Unitary District,Orkney,Elgin,NA,
+admin1,gb-hi,HI,9,GB-HLD,GB.HI,United Kingdom,Unitary District,Highlands and Islands,12602203,-4.81247,Highland,Highland,UK83,57.4123,HI,Unitary District,Highland,NA,NA,
+admin1,gb-ab,AB,9,GB-AGB,GB.AB,United Kingdom,Unitary District,Highlands and Islands,12696185,-5.14339,North Strathclyde,Argyll and Bute,UK83,56.2296,AB,Unitary District,Argyll and Bute,Earra-Ghaidheal agus Bňd,NA,
+admin1,gb-ps,PS,9,GB-POR,GB.PS,United Kingdom,Unitary Authority,South East,12696158,-0.979793,Hampshire,Portsmouth City,UK23,50.8032,PS,Unitary Authority,Portsmouth,NA,NA,E06000044
+admin1,gb-wi,WI,9,GB-ELS,GB.WI,United Kingdom,Island Area,Highlands and Islands,12602210,-6.74587,Scotland,Eilean Siar,UK89,58.1103,WI,Island Area,Eilean Siar,Western Isles,NA,
+admin1,gb-my,MY,9,GB-,GB.MY,United Kingdom,District,Northern Ireland,20078320,-6.26357,North of Northern Ireland,Moyle,UK72,55.1639,MY,District,Moyle,NA,NA,
+admin1,gb-7398,IO,9,GB-IOS,GB.IS,United Kingdom,Unitary Single-Tier County,South West,12602181,-4.75267,Cornwall,Cornwall and Isles of Scilly,UK08,50.4407,NA,Unitary Single-Tier County,Isles of Scilly,NA,NA,E06000053
+admin1,gb-eb,EB,9,GB-EDH,GB.EB,United Kingdom,Unitary District (city),Eastern,12696195,-3.26452,Edinburgh and the Lothians,City of Edinburgh,UK84,55.9132,EB,Unitary District (city),Edinburgh,Édimbourg|Edimburgo,NA,
+admin1,gb-lc,LC,9,GB-LCE,GB.LC,United Kingdom,Unitary Authority,East Midlands,12696154,-1.1183,Leicestershire,Leicester City,UK26,52.6114,LC,Unitary Authority,Leicester,NA,NA,E06000016
+admin1,gb-2393,LE,9,GB-LEC,GB.,United Kingdom,Kingdom,East Midlands,12602144,-1.11707,Leicestershire,Leicestershire,UK26,52.491,NA,Home Nation|Constituent Country,Leicestershire,NA,NA,E10000018
+admin1,gb-db,DB,9,GB-DBY,GB.DB,United Kingdom,Administrative County,East Midlands,12602143,-1.58946,Derbyshire,Derbyshire,UK10,52.9938,DB,Administrative County,Derbyshire,NA,NA,E10000007
+admin1,gb-de,DE,9,GB-DBY,GB.DE,United Kingdom,Unitary Authority,East Midlands,12696153,-1.47157,Derbyshire,Derby City,UK10,52.8904,DE,Unitary Authority,Derby,NA,NA,E06000015
+admin1,gb-an,AN,9,GB-ANN,GB.AN,United Kingdom,District,Northern Ireland,20078312,-6.26057,East of Northern Ireland,Antrim,UK52,54.6926,AN,District,Antrim,NA,NA,
+admin1,gb-bl,BL,9,GB-,GB.BL,United Kingdom,District,Northern Ireland,20078313,-6.22753,East of Northern Ireland,Ballymena,UK55,54.9003,BL,District,Ballymena,NA,NA,
+admin1,gb-ng,NG,9,GB-NGM,GB.NG,United Kingdom,Unitary Authority,East Midlands,12696180,-1.16592,Nottinghamshire,Nottingham City,UK33,52.9352,NG,Unitary Authority,Nottingham,NA,NA,E06000018
+admin1,gb-do,DO,9,GB-DEV,GB.DO,United Kingdom,Administrative County,South West,12602182,-3.85842,Devon,Devon,UK11,50.8008,DO,Administrative County,Devon,NA,NA,E10000008
+admin1,gb-2458,PA,9,GB-PKN,GB.,United Kingdom,Unitary District,Eastern,12696206,-3.88225,Tayside,Perth and Kinross,UK88,56.571,NA,Unitary District,Perthshire and Kinross,Perth and Kinross,NA,
+admin1,gb-er,ER,9,GB-ERW,GB.ER,United Kingdom,Unitary District,South Western,12696194,-4.36844,Glasgow City Region,East Renfrewshire,UK87,55.7656,ER,Unitary District,East Renfrewshire,NA,NA,
+admin1,gb-ea,EA,9,GB-EAY,GB.EA,United Kingdom,Unitary District,South Western,12696191,-4.29329,South Strathclyde,East Ayrshire,UK87,55.501,EA,Unitary District,East Ayrshire,NA,NA,
+admin1,gb-gg,GG,9,GB-GLG,GB.GG,United Kingdom,Unitary District (city),South Western,12696198,-4.21337,Glasgow City Region,Glasgow City,UK87,55.8371,GG,Unitary District (city),Glasgow,Glasgow City,NA,
+admin1,gb-ed,ED,9,GB-EDU,GB.ED,United Kingdom,Unitary District,South Western,12696192,-4.20219,Glasgow City Region,East Dunbartonshire,UK87,55.9544,ED,Unitary District,East Dunbartonshire,NA,NA,
+admin1,gb-ic,IC,9,GB-IVC,GB.IC,United Kingdom,Unitary District,South Western,12696200,-4.73843,Glasgow City Region,Inverclyde,UK87,55.8983,IC,Unitary District,Inverclyde,NA,NA,
+admin1,gb-2446,NA,9,GB-NAY,GB.ED,United Kingdom,Unitary District,South Western,12696203,-4.7108,South Strathclyde,North Ayrshire,UK87,55.7113,NA,Unitary District,North Ayshire,NA,NA,
+admin1,gb-nn,NN,9,GB-NLK,GB.NN,United Kingdom,Unitary District,South Western,12696204,-3.9392,Glasgow City Region,North Lanarkshire,UK87,55.8694,NN,Unitary District,North Lanarkshire,NA,NA,
+admin1,gb-rf,RF,9,GB-RFW,GB.RF,United Kingdom,Unitary District,South Western,12696207,-4.55373,Glasgow City Region,Renfrewshire,UK87,55.8437,RF,Unitary District,Renfrewshire,NA,NA,
+admin1,gb-sa,SA,9,GB-SAY,GB.SA,United Kingdom,Unitary District,South Western,12696209,-4.73841,South Strathclyde,South Ayrshire,UK87,55.2304,SA,Unitary District,South Ayrshire,NA,NA,
+admin1,gb-sl,SL,9,GB-SLK,GB.SL,United Kingdom,Unitary District,South Western,12696210,-3.82617,Glasgow City Region,South Lanarkshire,UK87,55.5981,SL,Unitary District,South Lanarkshire,NA,NA,
+admin1,gb-wd,WD,9,GB-WDU,GB.WD,United Kingdom,Unitary District,South Western,12696188,-4.47635,Glasgow City Region,Dumbarton & Clydebank,UK87,55.9884,WD,Unitary District,West Dunbartonshire,Dumbarton and Clydebank,NA,
+admin1,gb-ar,AR,9,GB-ABE,GB.AR,United Kingdom,Unitary District (city),North Eastern,12696182,-2.19814,Grampian,Aberdeen City,UK82,57.1676,AR,Unitary District (city),Aberdeen,Aberdeen City,NA,
+admin1,gb-as,AS,9,GB-ABD,GB.AS,United Kingdom,Unitary District,North Eastern,12696183,-2.77785,Grampian,Aberdeenshire,UK82,57.236,AS,Unitary District,Aberdeenshire,NA,NA,
+admin1,gb-fk,FK,9,GB-FAL,GB.FK,United Kingdom,Unitary District,Eastern,12696196,-3.75831,Central,Falkirk,UK79,55.9811,FK,Unitary District,Falkirk,NA,NA,
+admin1,gb-zg,ZG,9,GB-STG,GB.ZG,United Kingdom,Unitary District,Eastern,12696211,-4.28804,Central,Stirling,UK79,56.2213,ZG,Unitary District,Stirling,NA,NA,
+admin1,gb-cc,CC,9,GB-CLK,GB.CC,United Kingdom,Unitary District,Eastern,12696187,-3.70779,Central,Clackmannan,UK88,56.1431,CC,Unitary District,Clackmannanshire,NA,NA,
+admin1,gb-du,DU,9,GB-DND,GB.DU,United Kingdom,Unitary District (city),Eastern,12696190,-2.94934,Tayside,Dundee City,UK84,56.4868,DU,Unitary District (city),Dundee,Dundee City,NA,
+admin1,gb-fi,FI,9,GB-FIF,GB.FI,United Kingdom,Unitary District,Eastern,12602201,-3.16166,Fife,Fife,UK84,56.2201,FI,Unitary District,Fife,NA,NA,
+admin1,gb-ml,ML,9,GB-MLN,GB.ML,United Kingdom,Unitary District,Eastern,12696201,-3.06592,Edinburgh and the Lothians,Midlothian,UK84,55.8241,ML,Unitary District,Midlothian,Edinburgh,NA,
+admin1,gb-wh,WH,9,GB-WLN,GB.WH,United Kingdom,Unitary District,Eastern,12696212,-3.60556,Edinburgh and the Lothians,West Lothian,UK84,55.8947,WH,Unitary District,West Lothian,Linlithgow,NA,
+admin1,gb-bo,BO,9,GB-SCB,GB.BO,United Kingdom,Unitary District,Eastern,12602209,-2.77899,Scottish Borders,The Scottish Borders,UK78,55.4929,BO,Unitary District,Scottish Borders,The Borders,NA,
+admin1,gb-dh,DH,9,GB-DUR,GB.DH,United Kingdom,Unitary Single-Tier County,North East,12602150,-1.79965,Durham,County Durham,UK13,54.6955,DH,Unitary Single-Tier County,Durham,County Durham,NA,E06000047
+admin1,gb-da,DA,9,GB-DAL,GB.DA,United Kingdom,Unitary Authority,North East,12696152,-1.53938,Durham,Darlington Borough,UK13,54.5202,DA,Unitary Authority,Darlington,NA,NA,E06000005
+admin1,gb-hp,HP,9,GB-HPL,GB.HP,United Kingdom,Unitary Authority,North East,12696139,-1.27662,Durham,Hartlepool Borough,UK07,54.6625,HP,Unitary Authority,Hartlepool,NA,NA,E06000001
+admin1,gb-mb,MB,9,GB-MDB,GB.MB,United Kingdom,Unitary Authority,North East,12696141,-1.23971,Durham,Middlesbrough,UK07,54.5364,MB,Unitary Authority,Middlesbrough,NA,NA,E06000002
+admin1,gb-rc,RC,9,GB-RCC,GB.RC,United Kingdom,Unitary Authority,North East,12696145,-0.999287,Durham,Redcar and Cleveland Borough,UK07,54.5485,RC,Unitary Authority,Redcar and Cleveland,NA,NA,E06000003
+admin1,gb-zt,ZT,9,GB-STT,GB.ZT,United Kingdom,Unitary Authority,North East,12696147,-1.32309,Durham,Stockton-on-Tees Borough,UK07,54.5378,ZT,Unitary Authority,Stockton-on-Tees,Stockton,NA,E06000004
+admin1,gb-ha,HA,9,GB-HAM,GB.HA,United Kingdom,Administrative County,South East,12602169,-1.23817,Hampshire,Hampshire,UK19,51.1286,HA,Administrative County,Hampshire,Southampton,NA,E10000014
+admin1,gb-zh,ZH,9,GB-STH,GB.ZH,United Kingdom,Unitary Authority,South East,12696160,-1.3776,Hampshire,Southampton City,UK19,50.9158,ZH,Unitary Authority,Southampton,NA,NA,
+admin1,gb-2318,MO,9,GB-MON,GB.MM,United Kingdom,Unitary Authority (wales,West Wales and the Valleys,12602223,-2.90226,South Wales,Monmouthshire,UK92,51.7744,NA,Unitary Authority (wales),Monmouthshire,NA,NA,
+admin1,gb-gc,GC,9,GB-GLS,GB.GC,United Kingdom,Administrative County,South West,12602184,-2.14862,Gloucestershire,Gloucestershire,UK16,51.8153,GC,Administrative County,Gloucestershire,NA,NA,E10000013
+admin1,gb-mk,MK,9,GB-MIK,GB.MK,United Kingdom,Unitary Authority,South East,12696156,-0.72601,Buckinghamshire,Milton Keynes,UK31,52.0571,MK,Unitary Authority,Milton Keynes,NA,NA,E06000042
+admin1,gb-bu,BU,9,GB-BKM,GB.BU,United Kingdom,Administrative County,South East,12602166,-0.806599,Buckinghamshire,Buckinghamshire,UK04,51.7717,BU,Administrative County,Buckinghamshire,NA,NA,E10000002
+admin1,gb-bn,BN,9,GB-BAS,GB.BN,United Kingdom,Unitary Authority,South West,12696136,-2.49591,Bristol,Bath and North East Somerset,UK01,51.3476,BN,Unitary Authority,Bath and North East Somerset,NA,NA,E06000022
+admin1,gb-bs,BS,9,GB-BST,GB.BS,United Kingdom,Unitary Authority,South West,12602180,-2.60107,Bristol,City of Bristol,UK01,51.4624,BS,Unitary Authority,Bristol,NA,NA,E06000023
+admin1,gb-ns,NS,9,GB-NSM,GB.NS,United Kingdom,Unitary Authority,South West,12696144,-2.79158,Bristol,North Somerset,UK01,51.4109,NS,Unitary Authority,North Somerset,North West Somerset,NA,E06000024
+admin1,gb-sj,SJ,9,GB-SGC,GB.SJ,United Kingdom,Unitary Authority,South West,12696146,-2.462,Bristol,South Gloucestershire,UK01,51.5239,SJ,Unitary Authority,South Gloucestershire,NA,NA,E06000025
+admin1,gb-2389,BO,9,GB-BMH,GB.BM,United Kingdom,Unitary Authority,South West,12696150,-1.86297,Dorset,Bournemouth Borough,UK12,50.7378,NA,Unitary Authority,Bournemouth,NA,NA,E06000058
+admin1,gb-ds,DS,9,GB-DOR,GB.DS,United Kingdom,Administrative County,South West,12602183,-2.31103,Dorset,Dorset,UK12,50.8569,DS,Administrative County,Dorset,NA,NA,E06000059
+admin1,gb-2391,PO,9,GB-POL,GB.BM,United Kingdom,Unitary Authority,South West,12696157,-1.96155,Dorset,Poole Borough,UK12,50.7427,NA,Unitary Authority,Poole,NA,NA,E06000029
+admin1,gb-ht,HT,9,GB-HRT,GB.HT,United Kingdom,Administrative County,East,12602170,-0.26543,Hertfordshire,Hertfordshire,UK21,51.8113,HT,Administrative County,Hertfordshire,NA,NA,E10000015
+admin1,gb-cm,CM,9,GB-CAM,GB.CM,United Kingdom,Administrative County,East,12602140,0.015806,Cambridgeshire,Cambridgeshire,UK05,52.3476,CM,Administrative County,Cambridgeshire,NA,NA,E10000003
+admin1,gb-kh,KH,9,GB-KHL,GB.KH,United Kingdom,Unitary Authority,Yorkshire and the Humber,12696140,-0.372646,Kingston upon Hull,Kingston upon Hull City,UK22,53.7577,KH,Unitary Authority,Kingston upon Hull,Hull,NA,E06000010
+admin1,gb-ne,NE,9,GB-NEL,GB.NE,United Kingdom,Unitary Authority,Yorkshire and the Humber,12696142,-0.130193,Kingston upon Hull,North East Lincolnshire,UK22,53.5168,NE,Unitary Authority,North East Lincolnshire,NA,NA,E06000012
+admin1,gb-ba,BA,9,GB-BDG,GB.BA,United Kingdom,London Borough,Greater London,12695820,0.133951,Greater London,London Borough of Barking and Dagenham,UK17,51.5379,BA,London Borough,Barking and Dagenham,NA,NA,E09000002
+admin1,gb-xb,XB,9,GB-BEX,GB.XB,United Kingdom,London Borough,Greater London,12695822,0.152477,Greater London,London Borough of Bexley,UK17,51.4546,XB,London Borough,Bexley,NA,NA,E09000004
+admin1,gb-ke,KE,9,GB-KEN,GB.KE,United Kingdom,Administrative County,South East,12602173,0.718915,Kent,Kent,UK24,51.1979,KE,Administrative County,Kent,NA,NA,E10000016
+admin1,gb-bz,BZ,9,GB-BRY,GB.BZ,United Kingdom,London Borough,Greater London,12695824,0.046372,Greater London,London Borough of Bromley,UK17,51.3652,BZ,London Borough,Bromley,NA,NA,E09000006
+admin1,gb-be,BE,9,GB-BEN,GB.BE,United Kingdom,London Borough,Greater London,12695823,-0.252266,Greater London,London Borough of Brent,UK17,51.5578,BE,London Borough,Brent,NA,NA,E09000005
+admin1,gb-cn,CN,9,GB-CMD,GB.CN,United Kingdom,London Borough,Greater London,12695807,-0.150541,Greater London,London Borough of Camden,UK17,51.5491,CN,London Borough,Camden,NA,NA,E09000007
+admin1,gb-eg,EG,9,GB-EAL,GB.EG,United Kingdom,London Borough,Greater London,12695826,-0.321254,Greater London,London Borough of Ealing,UK17,51.5198,EG,London Borough,Ealing,NA,NA,E09000009
+admin1,gb-ef,EF,9,GB-ENF,GB.EF,United Kingdom,London Borough,Greater London,12695827,-0.091145,Greater London,London Borough of Enfield,UK17,51.644,EF,London Borough,Enfield,NA,NA,E09000010
+admin1,gb-gr,GR,9,GB-GRE,GB.GR,United Kingdom,London Borough (royal),Greater London,12695828,0.047328,Greater London,London Borough of Greenwich,UK17,51.4634,GR,London Borough (royal),Greenwich,NA,NA,E09000011
+admin1,gb-hf,HF,9,GB-HMF,GB.HF,United Kingdom,London Borough,Greater London,12695809,-0.20785,Greater London,London Borough of Hammersmith and Fulham,UK17,51.4894,HF,London Borough,Hammersmith and Fulham,NA,NA,E09000013
+admin1,gb-hu,HU,9,GB-HNS,GB.HU,United Kingdom,London Borough,Greater London,12695832,-0.339069,Greater London,London Borough of Hounslow,UK17,51.473,HU,London Borough,Hounslow,NA,NA,E09000018
+admin1,gb-it,IT,9,GB-ISL,GB.IT,United Kingdom,London Borough,Greater London,12695811,-0.098038,Greater London,London Borough of Islington,UK17,51.5396,IT,London Borough,Islington,NA,NA,E09000019
+admin1,gb-kc,KC,9,GB-KEC,GB.KC,United Kingdom,London Borough (royal),Greater London,12695812,-0.179557,Greater London,Royal Borough of Kensington and Chelsea,UK17,51.4919,KC,London Borough (royal),Kensington and Chelsea,NA,NA,E09000020
+admin1,gb-cy,CY,9,GB-CRY,GB.CY,United Kingdom,London Borough,Greater London,12695825,-0.075261,Greater London,London Borough of Croydon,UK17,51.3625,CY,London Borough,Croydon,NA,NA,E09000008
+admin1,gb-me,ME,9,GB-MRT,GB.ME,United Kingdom,London Borough,Greater London,12695834,-0.181508,Greater London,London Borough of Merton,UK17,51.4087,ME,London Borough,Merton,NA,NA,E09000024
+admin1,gb-rb,RB,9,GB-RDB,GB.RB,United Kingdom,London Borough,Greater London,12695835,0.085233,Greater London,London Borough of Redbridge,UK17,51.5732,RB,London Borough,Redbridge,NA,NA,E09000026
+admin1,gb-ru,RU,9,GBRIC,GB.RU,United Kingdom,London Borough,Greater London,12695836,-0.298542,Greater London,London Borough of Richmond upon Thames,UK17,51.4072,RU,London Borough,Richmond upon Thames,NA,NA,E09000027
+admin1,gb-su,SU,9,GB-STN,GB.SU,United Kingdom,London Borough,Greater London,12695837,-0.176573,Greater London,London Borough of Sutton,UK17,51.3606,SU,London Borough,Sutton,NA,NA,E09000029
+admin1,gb-th,TH,9,GB-TWH,GB.TH,United Kingdom,London Borough,Greater London,12695817,-0.026298,Greater London,London Borough of Tower Hamlets,UK17,51.5162,TH,London Borough,Tower Hamlets,NA,NA,E09000030
+admin1,gb-wf,WF,9,GB-WFT,GB.WF,United Kingdom,London Borough,Greater London,12695838,-0.012552,Greater London,London Borough of Waltham Forest,UK17,51.5949,WF,London Borough,Waltham Forest,NA,NA,E09000031
+admin1,gb-ww,WW,9,GB-WND,GB.WW,United Kingdom,London Borough,Greater London,12695818,-0.184208,Greater London,London Borough of Wandsworth,UK17,51.4523,WW,London Borough,Wandsworth,NA,NA,E09000032
+admin1,gb-we,WE,9,GB-WSM,GB.WE,United Kingdom,London Borough (city),Greater London,12695819,-0.161651,Greater London,City of Westminster,UK17,51.5115,WE,London Borough (city),Westminster,NA,NA,E09000033
+admin1,gb-li,LI,9,GB-LIN,GB.LI,United Kingdom,Administrative County,East Midlands,12602145,-0.222474,Lincolnshire,Lincolnshire,UK32,53.1152,LI,Administrative County,Lincolnshire,NA,NA,E10000019
+admin1,gb-bf,BF,9,GB-BFS,GB.BF,United Kingdom,District,Northern Ireland,20078326,-5.93684,Belfast,Belfast,UK58,54.6113,BF,District,Belfast,NA,NA,
+admin1,gb-ld,LD,9,GB-DRS,GB.LD,United Kingdom,London Borough (city),Northern Ireland,20078338,-7.21329,North of Northern Ireland,Derry,UK70,54.9694,LD,District,Derry,Londonderry,NA,
+admin1,gb-nm,NM,9,GB-NMD,GB.NM,United Kingdom,District,Northern Ireland,20078333,-6.26952,West and South of Northern Ireland,Newry and Mourne,UK73,54.1804,NM,District,Newry and Mourne,Mourne,NA,
+admin1,gb-am,AM,9,GB-ABC,GB.AM,United Kingdom,District,Northern Ireland,20078322,-6.62144,West and South of Northern Ireland,Armagh,UK54,54.3304,AM,District,Armagh,NA,NA,
+admin1,gb-bb,BB,9,GB-ABC,GB.BB,United Kingdom,District,Northern Ireland,20078328,-6.17154,East of Northern Ireland,Banbridge,UK57,54.3466,BB,District,Banbridge,NA,NA,
+admin1,gb-cr,CR,9,GB-ABC,GB.CR,United Kingdom,District,Northern Ireland,20078317,-6.39706,East of Northern Ireland,Craigavon,UK63,54.4884,CR,District,Craigavon,NA,NA,
+admin1,gb-dn,DN,9,GB-,GB.DN,United Kingdom,District,Northern Ireland,20078342,-6.94613,West and South of Northern Ireland,Dungannon,UK65,54.4791,DN,District,Dungannon,NA,NA,
+admin1,gb-2347,CO,9,GB-,GB.,United Kingdom,Province,Northern Ireland,20078341,-6.70918,West and South of Northern Ireland,Cookstown,UK62,54.6262,NA,Home Nation|Constituent Country,Cookstown,NA,NA,
+admin1,gb-lb,LB,9,GB-LBC,GB.LB,United Kingdom,District,Northern Ireland,20078319,-6.08226,Outer Belfast,Lisburn,UK69,54.5189,LB,District,Lisburn,NA,NA,
+admin1,gb-mf,MF,9,GB-,GB.MF,United Kingdom,District,Northern Ireland,20078340,-6.71991,West and South of Northern Ireland,Magherafelt,UK71,54.8166,MF,District,Magherafelt,NA,NA,
+admin1,gb-om,OM,9,GB-FMO,GB.OM,United Kingdom,District,Northern Ireland,20078344,-7.31156,West and South of Northern Ireland,Omagh,UK76,54.5823,OM,District,Omagh,NA,NA,
+admin1,gb-lr,LR,9,GB-,GB.LR,United Kingdom,District,Northern Ireland,20078318,-5.89587,East of Northern Ireland,Larne,UK67,54.861,LR,District,Larne,NA,NA,
+admin1,gb-cf,CF,9,GB-,GB.CF,United Kingdom,District,Northern Ireland,20078315,-5.79899,Outer Belfast,Carrickfergus,UK59,54.7431,CF,District,Carrickfergus,NA,NA,
+admin1,gb-nw,NW,9,GB-ANN,GB.NW,United Kingdom,District,Northern Ireland,20078321,-5.98106,Outer Belfast,Newtownabbey,UK74,54.7173,NW,District,Newtownabbey,NA,NA,
+admin1,gb-2354,ND,9,GB-AND,GB.ND,United Kingdom,District,Northern Ireland,20078334,-5.71772,Outer Belfast,North Down,UK75,54.6476,NA,District,North Down,NA,NA,
+admin1,gb-dw,DW,9,GB-NMD,GB.DW,United Kingdom,District,Northern Ireland,20078331,-5.80955,East of Northern Ireland,Down,UK64,54.3616,DW,District,Down,NA,NA,
+admin1,gb-cl,CL,9,GB-,GB.CL,United Kingdom,District,Northern Ireland,20078336,-6.68879,North of Northern Ireland,Coleraine,UK61,55.0562,CL,District,Coleraine,NA,NA,
+admin1,gb-by,BY,9,GB-,GB.BY,United Kingdom,District,Northern Ireland,20078314,-6.4032,North of Northern Ireland,Ballymoney,UK56,55.0525,BY,District,Ballymoney,NA,NA,
+admin1,gb-cs,CS,9,GB-LBC,GB.CS,United Kingdom,District,Northern Ireland,20078329,-5.85407,Outer Belfast,Castlereagh,UK60,54.536,CS,District,Castlereagh,NA,NA,
+admin1,gb-pe,PE,9,GB-PEM,GB.PE,United Kingdom,Unitary Authority (wales,East Wales,12602226,-4.90281,West Wales,Pembrokeshire County,UK91,51.6602,PE,Unitary Authority (wales),Pembrokeshire,NA,NA,
+admin1,gb-2301,CE,9,GB-CGN,GB.,United Kingdom,Principality,East Wales,12602217,-4.17527,Mid Wales,Ceredigion County,UK91,52.1793,NA,Unitary Authority (wales,Ceredigion,Cardiganshire,NA,
+admin1,gb-gd,GD,9,GB-GWN,GB.GD,United Kingdom,Unitary Authority (wales,East Wales,12602221,-3.92029,North Wales,Gwynedd,UK93,52.8484,GD,Unitary Authority (wales),Gwynedd,Caernarfonshire and Merionethshire,NA,
+admin1,gb-sp,SP,9,GB-SHR,GB.SP,United Kingdom,Unitary Single-Tier County,West Midlands,12602188,-2.72133,Shropshire,Shropshire,UK35,52.6167,SP,Unitary Single-Tier County,Shropshire,Salop,NA,E06000051
+admin1,gb-po,PO,9,GB-POW,GB.PO,United Kingdom,Unitary Authority (wales,West Wales and the Valleys,12602227,-3.4415,Mid Wales,Powys County,UK95,52.338,PO,Unitary Authority (wales),Powys,NA,NA,
+admin1,gb-mt,MT,9,GB-MTY,GB.MT,United Kingdom,Unitary Authority (wales,East Wales,12602222,-3.35678,South Wales,Merthyr Tydfil County Borough,UK94,51.7461,MT,Unitary Authority (wales),Merthyr Tydfil,NA,NA,
+admin1,gb-bj,BJ,9,GB-BGE,GB.BJ,United Kingdom,Unitary Authority (wales,East Wales,12602213,-3.60687,South Wales,Bridgend County Borough,UK94,51.5414,BJ,Unitary Authority (wales),Bridgend,NA,NA,
+admin1,gb-cp,CP,9,GB-CAY,GB.CP,United Kingdom,Unitary Authority (wales,East Wales,12602214,-3.18286,South Wales,Caerphilly County Borough,UK94,51.6407,CP,Unitary Authority (wales),Caerphilly,NA,NA,
+admin1,gb-rt,RT,9,GB-RCT,GB.RT,United Kingdom,Unitary Authority (wales,East Wales,12602228,-3.40988,South Wales,Rhondda Cynon Taff County Borough,UK94,51.617,RT,Unitary Authority (wales),"Rhondda, Cynon, Taff",NA,NA,
+admin1,gb-ca,CA,9,GB-CRF,GB.CA,United Kingdom,Unitary Authority (wales,West Wales and the Valleys,12602215,-3.1785,South Wales,Cardiff County,UK96,51.5049,CA,Unitary Authority (wales),Cardiff,NA,NA,
+admin1,gb-vg,VG,9,GB-VGL,GB.VG,United Kingdom,Unitary Authority (wales,West Wales and the Valleys,12602231,-3.36772,South Wales,Vale of Glamorgan,UK96,51.4474,VG,Unitary Authority (wales),Vale of Glamorgan,NA,NA,
+admin1,gb-np,NP,9,GB-NTL,GB.NP,United Kingdom,Unitary Authority (wales,East Wales,12602224,-3.73935,South Wales,Neath and Port Talbot County Borough,UK97,51.6459,NP,Unitary Authority (wales),Neath Port Talbot,Neath and Port Talbot,NA,
+admin1,gb-sw,SW,9,GB-SWA,GB.SW,United Kingdom,Unitary Authority (wales,East Wales,12602229,-4.06364,West Wales,Swansea City and County,UK97,51.6203,SW,Unitary Authority (wales),Swansea,NA,NA,
+admin1,gb-7122,BO,9,GB-BOL,GB.MN,United Kingdom,Metropolitan Borough,North West,-12602158,-2.42876,Greater Manchester,Greater Manchester,UK18,53.5887,NA,Metropolitan Borough,Bolton,NA,NA,E08000001
+admin1,gb-bw,BW,9,GB-BBD,GB.BW,United Kingdom,Unitary Authority,North West,12696178,-2.44291,Lancashire,Blackburn with Darwen,UK25,53.705,BW,Unitary Authority,Blackburn with Darwen,"Blackburn, Blackburn and Darwen",NA,E06000008
+admin1,gb-la,LA,9,GB-LAN,GB.LA,United Kingdom,Administrative County,North West,12602160,-2.54458,Lancashire,Lancashire,UK25,53.8599,LA,Administrative County,Lancashire,NA,NA,E10000017
+admin1,gb-ey,EY,9,GB-ERY,GB.EY,United Kingdom,Unitary Authority,Yorkshire and the Humber,12602193,-0.480224,Kingston upon Hull,East Riding of Yorkshire,UK22,53.9047,EY,Unitary Authority,East Riding of Yorkshire,"East Riding, East Yorkshire",NA,E06000011
+admin1,gb-yk,YK,9,GB-YOR,GB.YK,United Kingdom,Unitary Authority,Yorkshire and the Humber,12696148,-1.07785,North Yorkshire,York City,UK30,53.9488,YK,Unitary Authority,York,NA,NA,E06000014
+admin1,gb-di,DI,9,GB-DEN,GB.DI,United Kingdom,Unitary Authority (wales,East Wales,12602219,-3.34024,North Wales,Denbighshire County,UK90,53.0665,DI,Unitary Authority (wales),Denbighshire,NA,NA,
+admin1,gb-fl,FL,9,GB-FLN,GB.FL,United Kingdom,Unitary Authority (wales,West Wales and the Valleys,12602220,-3.14709,North Wales,Flintshire County,UK90,53.1815,FL,Unitary Authority (wales),Flintshire,NA,NA,
+admin1,gb-wx,WX,9,GB-WRX,GB.WX,United Kingdom,Unitary Authority (wales,West Wales and the Valleys,12602232,-3.0538,North Wales,Wrexham County Borough,UK90,53.017,WX,Unitary Authority (wales),Wrexham,NA,NA,
+admin1,gb-bg,BG,9,GB-BGW,GB.BG,United Kingdom,Unitary Authority (wales,East Wales,12602212,-3.1998,South Wales,Blaenau Gwent County Borough,UK92,51.7719,BG,Unitary Authority (wales),Blaenau Gwent,NA,NA,
+admin1,gb-no,NO,9,GB-NWP,GB.NO,United Kingdom,Unitary Authority (wales,West Wales and the Valleys,12602225,-2.94989,South Wales,Newport City,UK92,51.5866,NO,Unitary Authority (wales),Newport,NA,NA,
+admin1,gb-tf,TF,9,GB-TOF,GB.TF,United Kingdom,Unitary Authority (wales,East Wales,12602230,-3.0449,South Wales,Torfaen County Borough,UK92,51.6945,TF,Unitary Authority (wales),Torfaen,NA,NA,
+admin1,gb-lm,LM,9,GB-,GB.LM,United Kingdom,District,Northern Ireland,20078339,-6.9714,North of Northern Ireland,Limavady,UK68,54.9923,LM,District,Limavady,NA,NA,
+admin1,gb-sb,SB,9,GB-DRS,GB.SB,United Kingdom,District,Northern Ireland,20078345,-7.41337,North of Northern Ireland,Strabane,UK77,54.8064,SB,District,Strabane,NA,NA,
+admin1,gb-fe,FE,9,GB-FMO,GB.FE,United Kingdom,District,Northern Ireland,20078335,-7.66047,West and South of Northern Ireland,Fermanagh,UK66,54.3798,FE,District,Fermanagh,NA,NA,
+admin1,gb-ny,NY,9,GB-NYK,GB.NY,United Kingdom,Administrative County,Yorkshire and the Humber,12602195,-1.37567,North Yorkshire,North Yorkshire,UK30,54.2158,NY,Administrative County,North Yorkshire,NA,NA,E10000023
+admin1,gb-2420,PL,9,GB-PLY,GB.DO,United Kingdom,Unitary Authority,South West,12696173,-4.11254,Devon,Plymouth City,UK08,50.3951,NA,Unitary Authority,Plymouth,NA,NA,E06000026
+admin1,gb-tb,TB,9,GB-TOB,GB.TB,United Kingdom,Unitary Authority,South West,12696174,-3.56802,Devon,Torbay Borough,UK11,50.4496,TB,Unitary Authority,Torbay,NA,NA,E06000027
+admin1,gb-ex,EX,9,GB-ESS,GB.EX,United Kingdom,Administrative County,East,12602168,0.495656,Essex,Essex,UK15,51.7709,EX,Administrative County,Essex,NA,NA,E10000012
+admin1,gb-nf,NF,9,GB-NFK,GB.NF,United Kingdom,Administrative County,East,12602141,0.953164,Norfolk,Norfolk,UK29,52.6602,NF,Administrative County,Norfolk,NA,NA,E10000020
+admin1,gb-bh,BH,9,GB-BNH,GB.BH,United Kingdom,Unitary Authority,South East,12696151,-0.1065,East Sussex,Brighton and Hove City,UK44,50.8421,BH,Unitary Authority,Brighton and Hove,NA,NA,
+admin1,gb-hv,HV,9,GB-HAV,GB.HV,United Kingdom,London Borough,Greater London,12695830,0.24211,Greater London,London Borough of Havering,UK15,51.5634,HV,London Borough,Havering,NA,NA,E09000016
+admin1,gb-tr,TR,9,GB-THR,GB.TR,United Kingdom,Unitary Authority,East,12696176,0.381907,Essex,Thurrock,UK15,51.503,TR,Unitary Authority,Thurrock,NA,NA,E06000034
+admin1,gb-ss,SS,9,GB-SOS,GB.SS,United Kingdom,Unitary Authority,East,12696175,0.73146,Essex,Southend-on-Sea Borough,UK24,51.5498,SS,Unitary Authority,Southend-on-Sea,Southend,NA,E06000033
+admin1,gb-ws,WS,9,GB-WSX,GB.WS,United Kingdom,Administrative County,South East,12602177,-0.457938,West Sussex,West Sussex,UK44,50.9489,WS,Administrative County,West Sussex,NA,NA,E10000032
+admin1,gb-wr,WR,9,GB-WAR,GB.WR,United Kingdom,Administrative County,West Midlands,12602190,-1.55487,Warwickshire,Warwickshire,UK42,52.168,WR,Administrative County,Warwickshire,NA,NA,E10000031
+admin1,gb-hd,HD,9,GB-HIL,GB.HD,United Kingdom,London Borough,Greater London,12695831,-0.4325,Greater London,London Borough of Hillingdon,UK40,51.5338,HD,London Borough,Hillingdon,NA,NA,E09000017
+admin1,gb-kt,KT,9,GB-KTT,GB.KT,United Kingdom,London Borough (royal),Greater London,12695833,-0.2699,Greater London,Royal Borough of Kingston upon Thames,UK40,51.3925,KT,London Borough (royal),Kingston upon Thames,NA,NA,E09000021
+admin1,gb-sr,SR,9,GB-SRY,GB.SR,United Kingdom,Administrative County,South East,12602176,-0.388084,Surrey,Surrey,UK40,51.2608,SR,Administrative County,Surrey,NA,NA,E10000030
+admin1,gb-es,ES,9,GB-ESX,GB.ES,United Kingdom,Administrative County,South East,12602167,0.372063,East Sussex,East Sussex,UK14,50.9537,ES,Administrative County,East Sussex,NA,NA,E10000011
+admin1,gb-ox,OX,9,GB-OXF,GB.OX,United Kingdom,Administrative County,South East,12602175,-1.29123,Oxfordshire,Oxfordshire,UK34,51.7912,OX,Administrative County,Oxfordshire,NA,NA,E10000025
+admin1,gb-sn,SN,9,GB-SWD,GB.SN,United Kingdom,Unitary Authority,South West,12696162,-1.71017,Wiltshire,Swindon Borough,UK46,51.567,SN,Unitary Authority,Swindon,Thamesdown,NA,E06000030
+admin1,gb-na,NA,9,GB-NTH,GB.NA,United Kingdom,Administrative County,East Midlands,12602146,-0.882413,Northamptonshire,Northamptonshire,UK31,52.3083,NA,Administrative County,Northamptonshire,NA,NA,E10000021
+admin1,gb-rl,RL,9,GB-RUD,GB.RL,United Kingdom,Unitary Authority,East Midlands,12696159,-0.610216,Rutland,Rutland County,UK26,52.657,RL,Unitary Authority,Rutland,NA,NA,E06000017
+admin1,gb-hk,HK,9,GB-HCK,GB.HK,United Kingdom,London Borough,Greater London,12695808,-0.052343,Greater London,London Borough of Hackney,UK17,51.5523,HK,London Borough,Hackney,NA,NA,E09000012
+admin1,gb-hy,HY,9,GB-HRY,GB.HY,United Kingdom,London Borough,Greater London,12695810,-0.096332,Greater London,London Borough of Haringey,UK17,51.5834,HY,London Borough,Haringey,NA,NA,E09000014
+admin1,gb-hr,HR,9,GB-HRW,GB.HR,United Kingdom,London Borough,Greater London,12695829,-0.333295,Greater London,London Borough of Harrow,UK17,51.5894,HR,London Borough,Harrow,NA,NA,E09000015
+admin1,gb-lt,LT,9,GB-LBH,GB.LT,United Kingdom,London Borough,Greater London,12695813,-0.10867,Greater London,London Borough of Lambeth,UK17,51.4604,LT,London Borough,Lambeth,NA,NA,E09000022
+admin1,gb-lw,LW,9,GB-LEW,GB.LW,United Kingdom,London Borough,Greater London,12695814,-0.011286,Greater London,London Borough of Lewisham,UK17,51.4418,LW,London Borough,Lewisham,NA,NA,E09000023
+admin1,gb-nh,NH,9,GB-NWM,GB.NH,United Kingdom,London Borough,Greater London,12695815,0.044254,Greater London,London Borough of Newham,UK17,51.5273,NH,London Borough,Newham,NA,NA,E09000025
+admin1,gb-sq,SQ,9,GB-SWK,GB.SQ,United Kingdom,London Borough,Greater London,12695816,-0.06552,Greater London,London Borough of Southwark,UK17,51.466,SQ,London Borough,Southwark,NA,NA,E09000028
+admin1,gb-he,HE,9,GB-HEF,GB.HE,United Kingdom,Unitary Authority,West Midlands,12602187,-2.73691,Herefordshire,Herefordshire,UK20,52.0807,HE,Unitary Authority,Herefordshire,NA,NA,E06000019
+admin1,gb-st,ST,9,GB-STS,GB.ST,United Kingdom,Administrative County,West Midlands,12602189,-2.01517,Staffordshire,Staffordshire,UK38,52.9024,ST,Administrative County,Staffordshire,NA,NA,E10000028
+admin1,gb-wc,WC,9,GB-WOR,GB.WC,United Kingdom,Administrative County,West Midlands,12602192,-2.2004,Worcestershire,Worcestershire,UK20,52.21,WC,Administrative County,Worcestershire,NA,NA,E10000034
+admin1,gb-tk,TK,9,GB-TFW,GB.TK,United Kingdom,Unitary Authority,West Midlands,12696181,-2.49356,Shropshire,Telford and Wrekin Borough,UK35,52.7152,TK,Unitary Authority,Telford and Wrekin,"The Wrekin, Wrekin",NA,E06000020
+admin1,gb-6338,CI,9,GB-LND,GB.IT,United Kingdom,City Corporation,Greater London,12695806,-0.08681,City of London,City of London,NA,51.5169,NA,City Corporation,City,The City|City of London|Square Mile,NA,E09000001
+admin1,gb-nb,NB,9,GB-NBL,GB.NB,United Kingdom,Unitary Single-Tier County,North East,12602153,-2.07057,Northumberland,Northumberland,UK32,55.3152,NB,Unitary Single-Tier County,Northumberland,NA,NA,E06000057
+admin1,gb-2367,NU,9,GB-NET,GB.TW,United Kingdom,Metropolitan Borough,North East,-12602156,-1.5994,Tyne and Wear,Tyne and Wear,UK41,54.9931,NA,Metropolitan Borough,Newcastle upon Tyne,NA,NA,E08000021
+admin1,gb-7113,NT,9,GB-NTY,GB.TW,United Kingdom,Metropolitan Borough,North East,-12602156,-1.48264,Tyne and Wear,Tyne and Wear,UK41,55.0184,NA,Metropolitan Borough,North Tyneside,NA,NA,E08000022
+admin1,gb-7114,ST,9,GB-STY,GB.TW,United Kingdom,Metropolitan Borough,North East,-12602156,-1.44209,Tyne and Wear,Tyne and Wear,UK41,54.9526,NA,Metropolitan Borough,South Tyneside,NA,NA,E08000023
+admin1,gb-7115,SU,9,GB-SND,GB.TW,United Kingdom,Metropolitan Borough,North East,-12602156,-1.46175,Tyne and Wear,Tyne and Wear,UK41,54.8617,NA,Metropolitan Borough,Sunderland,NA,NA,E08000024
+admin1,gb-7116,GA,9,GB-GAT,GB.TW,United Kingdom,Metropolitan Borough,North East,-12602156,-1.66816,Tyne and Wear,Tyne and Wear,UK41,54.9391,NA,Metropolitan Borough,Gateshead,NA,NA,E08000037
+admin1,gb-2364,KN,9,GB-KWL,GB.MS,United Kingdom,Metropolitan Borough,North West,-12602161,-2.83419,Merseyside,Merseyside,UK28,53.4145,NA,Metropolitan Borough,Knowsley,NA,NA,E08000011
+admin1,gb-7118,SE,9,GB-SFT,GB.MS,United Kingdom,Metropolitan Borough,North West,-12602161,-3.05568,Merseyside,Merseyside,UK28,53.5647,NA,Metropolitan Borough,Sefton,NA,NA,E08000014
+admin1,gb-7119,LI,9,GB-LIV,GB.MS,United Kingdom,Metropolitan Borough,North West,-12602161,-2.9327,Merseyside,Merseyside,UK28,53.4312,NA,Metropolitan Borough,Liverpool,NA,NA,E08000012
+admin1,gb-wt,WT,9,GB-WRT,GB.WT,United Kingdom,Unitary Authority,North West,12696172,-2.55468,Cheshire,Warrington Borough,UK06,53.3766,WT,Unitary Authority,Warrington,NA,NA,E06000007
+admin1,gb-ms,MS,9,GB-,GB.MS,United Kingdom,Metropolitan Borough,North West,12602161,-2.73472,Merseyside,Merseyside,UK28,53.4417,MS,Metropolitan Borough,Merseyside,NA,NA,E11000002
+admin1,gb-7117,BL,9,GB-BPL,GB.LA,United Kingdom,Unitary Authority,North West,-12602160,-3.00469,Lancashire,Lancashire,UK25,53.8406,NA,Unitary Authority,Blackpool,NA,NA,E06000009
+admin1,gb-3265,KI,9,GB-KIR,GB.WY,United Kingdom,Metropolitan Borough,Yorkshire and the Humber,-12602197,-1.73944,West Yorkshire,West Yorkshire,UK45,53.6218,NA,Metropolitan Borough,Kirklees,NA,NA,E08000034
+admin1,gb-7130,CA,9,GB-CLD,GB.WY,United Kingdom,Metropolitan Borough,Yorkshire and the Humber,-12602197,-1.95182,West Yorkshire,West Yorkshire,UK45,53.7446,NA,Metropolitan Borough,Calderdale,NA,NA,E08000033
+admin1,gb-7131,BR,9,GB-BRD,GB.WY,United Kingdom,Metropolitan Borough,Yorkshire and the Humber,-12602197,-1.78384,West Yorkshire,West Yorkshire,UK45,53.8466,NA,Metropolitan Borough,Bradford,NA,NA,E08000032
+admin1,gb-7132,LE,9,GB-LDS,GB.WY,United Kingdom,Metropolitan Borough,Yorkshire and the Humber,-12602197,-1.47788,West Yorkshire,West Yorkshire,UK45,53.8106,NA,Metropolitan Borough,Leeds,NA,NA,E08000035
+admin1,gb-7133,WA,9,GB-WKF,GB.WY,United Kingdom,Metropolitan Borough,Yorkshire and the Humber,-12602197,-1.39089,West Yorkshire,West Yorkshire,UK45,53.6457,NA,Metropolitan Borough,Wakefield,NA,NA,E08000036
+admin1,gb-3266,SA,9,GB-SLF,GB.MN,United Kingdom,Metropolitan Borough,North West,-12602158,-2.40861,Greater Manchester,Greater Manchester,UK18,53.5006,NA,Metropolitan Borough,Salford,NA,NA,E08000006
+admin1,gb-7121,WI,9,GB-WGN,GB.MN,United Kingdom,Metropolitan Borough,North West,-12602158,-2.60574,Merseyside,Greater Manchester,UK18,53.5317,NA,Metropolitan Borough,Wigan,NA,NA,E08000010
+admin1,gb-7123,BU,9,GB-BUR,GB.MN,United Kingdom,Metropolitan Borough,North West,-12602158,-2.30878,Greater Manchester,Greater Manchester,UK18,53.5827,NA,Metropolitan Borough,Bury,NA,NA,E08000002
+admin1,gb-7124,RO,9,GB-RCH,GB.MN,United Kingdom,Metropolitan Borough,North West,-12602158,-2.1438,Greater Manchester,Greater Manchester,UK18,53.6277,NA,Metropolitan Borough,Rochdale,NA,NA,E08000005
+admin1,gb-7125,OL,9,GB-OLD,GB.MN,United Kingdom,Metropolitan Borough,North West,-12602158,-2.03581,Greater Manchester,Greater Manchester,UK18,53.5527,NA,Metropolitan Borough,Oldham,NA,NA,E08000004
+admin1,gb-7126,TA,9,GB-TAM,GB.MN,United Kingdom,Metropolitan Borough,North West,-12602158,-2.0958,Greater Manchester,Greater Manchester,UK18,53.4567,NA,Metropolitan Borough,Tameside,NA,NA,E08000008
+admin1,gb-7127,ST,9,GB-SKP,GB.MN,United Kingdom,Metropolitan Borough,North West,-12602158,-2.1408,Greater Manchester,Greater Manchester,UK18,53.3787,NA,Metropolitan Borough,Stockport,NA,NA,E08000007
+admin1,gb-7128,MA,9,GB-MAN,GB.MN,United Kingdom,Metropolitan Borough,North West,-12602158,-2.26678,Greater Manchester,Greater Manchester,UK18,53.4597,NA,Metropolitan Borough,Manchester,NA,NA,E08000003
+admin1,gb-7129,TR,9,GB-TRF,GB.MN,United Kingdom,Metropolitan Borough,North West,-12602158,-2.37777,Greater Manchester,Greater Manchester,UK18,53.4147,NA,Metropolitan Borough,Trafford,NA,NA,E08000009
+admin1,gb-2366,CE,9,GB-CHE,GB.CH,United Kingdom,Unitary Authority,North West,-12602157,-2.21364,Cheshire,Cheshire,UK06,53.2396,NA,Unitary Authority,Cheshire East,NA,NA,E06000049
+admin1,gb-nt,NT,9,GB-NTT,GB.NT,United Kingdom,Administrative County,East Midlands,12602147,-0.983216,Nottinghamshire,Nottinghamshire,UK33,53.1186,NT,Administrative County,Nottinghamshire,NA,NA,E10000024
+admin1,gb-3267,RO,9,GB-ROT,GB.SY,United Kingdom,Metropolitan Borough,Yorkshire and the Humber,-12602196,-1.29072,South Yorkshire,South Yorkshire,UK37,53.3854,NA,Metropolitan Borough,Rotherham,NA,NA,E08000018
+admin1,gb-7134,SH,9,GB-SHF,GB.SY,United Kingdom,Metropolitan Borough,Yorkshire and the Humber,-12602196,-1.57387,South Yorkshire,South Yorkshire,UK37,53.4087,NA,Metropolitan Borough,Sheffield,NA,NA,E08000019
+admin1,gb-7135,BA,9,GB-BNS,GB.SY,United Kingdom,Metropolitan Borough,Yorkshire and the Humber,-12602196,-1.45688,South Yorkshire,South Yorkshire,UK37,53.5347,NA,Metropolitan Borough,Barnsley,NA,NA,E08000016
+admin1,gb-nl,NL,9,GB-NLN,GB.NL,United Kingdom,Unitary Authority,Yorkshire and the Humber,12696143,-0.570942,Kingston upon Hull,North Lincolnshire,UK22,53.5741,NL,Unitary Authority,North Lincolnshire,NA,NA,E06000013
+admin1,gb-7136,DO,9,GB-DNC,GB.SY,United Kingdom,Metropolitan Borough,Yorkshire and the Humber,-12602196,-1.08493,South Yorkshire,South Yorkshire,UK37,53.5227,NA,Metropolitan Borough,Doncaster,NA,NA,E08000017
+admin1,gb-2377,BI,9,GB-BIR,GB.WM,United Kingdom,Metropolitan Borough,West Midlands,-12602191,-1.81614,West Midlands,West Midlands,UK43,52.4782,NA,Metropolitan Borough,Birmingham,NA,NA,E08000025
+admin1,gb-7137,SA,9,GB-SAW,GB.WM,United Kingdom,Metropolitan Borough,West Midlands,-12602191,-2.00281,West Midlands,West Midlands,UK43,52.5118,NA,Metropolitan Borough,Sandwell,NA,NA,E08000028
+admin1,gb-7138,DU,9,GB-DUD,GB.WM,United Kingdom,Metropolitan Borough,West Midlands,-12602191,-2.1138,West Midlands,West Midlands,UK43,52.4728,NA,Metropolitan Borough,Dudley,NA,NA,E08000027
+admin1,gb-7139,WO,9,GB-WLV,GB.WM,United Kingdom,Metropolitan Borough,West Midlands,-12602191,-2.1108,West Midlands,West Midlands,UK43,52.5958,NA,Metropolitan Borough,Wolverhampton,NA,NA,E08000031
+admin1,gb-7140,WA,9,GB-WLL,GB.WM,United Kingdom,Metropolitan Borough,West Midlands,-12602191,-1.95182,West Midlands,West Midlands,UK43,52.6018,NA,Metropolitan Borough,Walsall,NA,NA,E08000030
+admin1,gb-7141,SO,9,GB-SOL,GB.WM,United Kingdom,Metropolitan Borough,West Midlands,-12602191,-1.71185,West Midlands,West Midlands,UK43,52.4038,NA,Metropolitan Borough,Solihull,NA,NA,E08000029
+admin1,gb-7142,CO,9,GB-COV,GB.WM,United Kingdom,Metropolitan Borough,West Midlands,-12602191,-1.53187,West Midlands,West Midlands,UK43,52.4068,NA,Metropolitan Borough,Coventry,NA,NA,E08000026
+admin1,gb-2381,CB,9,GB-CBF,GB.BD,United Kingdom,Unitary Authority,East,-12602163,-0.376341,Bedfordshire,Bedfordshire,UK02,52.0236,NA,Unitary Authority,Central Bedfordshire,NA,NA,E06000056
+admin1,gb-bd,BD,9,GB-BDF,GB.BD,United Kingdom,Unitary Authority,East,-12602163,-0.470004,Bedfordshire,Bedfordshire,UK02,52.1788,BD,Unitary Authority,Bedford,NA,NA,E06000055
+admin1,gb-2388,RE,9,GB-RDG,GB.BK,United Kingdom,Unitary Authority,South East,-26821262,-1.03367,Berkshire,Berkshire,UK03,51.4497,NA,Unitary Authority,Reading,NA,NA,E06000038
+admin1,gb-7143,WB,9,GB-WBK,GB.BK,United Kingdom,Unitary Authority,South East,-26821262,-1.2949,Berkshire,Berkshire,UK03,51.4529,NA,Unitary Authority,West Berkshire,NA,NA,E06000037
+admin1,gb-7144,WO,9,GB-WOK,GB.BK,United Kingdom,Unitary Authority,South East,-26821262,-0.90795,Berkshire,Berkshire,UK03,51.4019,NA,Unitary Authority,Wokingham,NA,NA,E06000041
+admin1,gb-7145,BF,9,GB-BRC,GB.BK,United Kingdom,Unitary Authority,South East,-26821262,-0.763967,Berkshire,Berkshire,UK03,51.3929,NA,Unitary Authority,Bracknell Forest,NA,NA,E06000036
+admin1,gb-7146,RB,9,GB-,GB.BK,United Kingdom,Unitary Authority,South East,-26821262,-0.700975,Berkshire,Berkshire,UK03,51.4769,NA,Unitary Authority,Royal Borough of Windsor and Maidenhead,NA,NA,E06000040
+admin1,gb-7147,SL,9,GB-SLG,GB.BK,United Kingdom,Unitary Authority,South East,-26821262,-0.547994,Berkshire,Berkshire,UK03,51.4769,NA,Unitary Authority,Slough,NA,NA,E06000039
+admin1,gb-7149,BA,9,GB-BNE,GB.EF,United Kingdom,London Borough,Greater London,12695821,-0.204805,Greater London,London Borough of Enfield,UK17,51.6115,NA,London Borough,Barnet,NA,London Borough of Barnet,E09000003
+admin1,gb-so,SO,9,GB-STE,GB.SO,United Kingdom,Unitary Authority,West Midlands,12696161,-2.16701,Staffordshire,Stoke-on-Trent City,UK38,53.0034,SO,Unitary Authority,Stoke-on-Trent,NA,NA,E06000021
+admin1,gb-7150,CW,9,GB-CHW,GB.WT,United Kingdom,Unitary Authority,North West,-12602157,-2.76774,Cheshire,Cheshire,UK06,53.1671,NA,Unitary Authority,Cheshire West and Chester,NA,NA,E06000050
+admin1,gb-7151,HA,9,GB-HAL,GB.WT,United Kingdom,Unitary Authority,North West,-12602157,-2.68727,Cheshire,Warrington Borough,UK06,53.331,NA,Unitary Authority,Halton,NA,NA,E06000006
+admin1,gb-pb,PB,9,GB-PTE,GB.PB,United Kingdom,Unitary Authority,East,12696170,-0.270107,Cambridgeshire,Peterborough City,UK05,52.5833,PB,Unitary Authority,Peterborough,NA,NA,E06000031
+admin1,gb-iw,IW,9,GB-IOW,GB.IW,United Kingdom,Unitary Authority,South East,12602172,-1.31588,Hampshire,Isle of Wight,UK23,50.6808,IW,Unitary Authority,Isle of Wight,NA,NA,E06000046
+admin1,gb-mo,MO,9,GB-MRY,GB.MO,United Kingdom,Unitary District,Highlands and Islands,12696202,-3.23013,Grampian,Moray,UK82,57.4636,MO,Unitary District,Moray,Elgin,NA,
+admin1,gb-ag,AG,9,GB-ANS,GB.AG,United Kingdom,Unitary District,Eastern,12696184,-2.9155,Tayside,Angus,UK84,56.7458,AG,Unitary District,Angus,Forfar,NA,
+admin1,gb-el,EL,9,GB-ELN,GB.EL,United Kingdom,Unitary District,Eastern,12696193,-2.7108,Edinburgh and the Lothians,East Lothian,UK84,55.9477,EL,Unitary District,East Lothian,Haddington,NA,
+admin1,gb-sm,SM,9,GB-SOM,GB.SM,United Kingdom,Administrative County,South West,12602185,-3.03172,Somerset,Somerset,UK36,51.0339,SM,Administrative County,Somerset,NA,NA,E10000027
+admin1,gb-ci,CI,9,GB-CMN,GB.CI,United Kingdom,Unitary Authority (wales,East Wales,12602216,-4.20485,West Wales,Carmarthenshire County,UK91,51.8622,CI,Unitary Authority (wales),Carmarthenshire,NA,NA,
+admin1,gb-hl,HL,9,GB-HAL,GB.HL,United Kingdom,Metropolitan Borough,North West,12696171,-3.05638,Merseyside,Halton Borough,UK28,53.3686,HL,Metropolitan Borough,Halton,NA,NA,
+admin1,gb-co,CO,9,GB-CON,GB.CO,United Kingdom,Unitary Single-Tier County,South West,12602181,-4.75267,Cornwall,Cornwall and Isles of Scilly,UK08,50.4407,CO,Unitary Single-Tier County,Cornwall,Cornouailles|Cornovaglia|Cornualha|Cornualles|Cornwall and Isles of Scilly,NA,E06000052
+admin1,gb-cw,CW,9,GB-CWY,GB.CW,United Kingdom,Unitary Authority (wales,East Wales,12602218,-3.7349,North Wales,Conwy County Borough,UK93,53.1274,CW,Unitary Authority (wales),Conwy,Aberconwy and Colwyn,NA,
+admin1,gb-nd,ND,9,GB-AND,GB.ND,United Kingdom,District,Northern Ireland,20078327,-5.62705,East of Northern Ireland,Ards,UK53,54.5164,ND,District,Ards,NA,NA,
+admin1,gb-dg,DG,9,GB-DGY,GB.DG,United Kingdom,Unitary District,South Western,12602200,-4.01555,Dumfries and Galloway,Dumfries and Galloway,UK80,55.0998,DG,Unitary District,Dumfries and Galloway,NA,NA,
+admin1,gb-cu,CU,9,GB-CMA,GB.CU,United Kingdom,Administrative County,North West,12602148,-2.89222,Cumbria,Cumbria,UK09,54.6368,CU,Administrative County,Cumbria,NA,NA,E10000006
+admin1,gb-sf,SF,9,GB-SFK,GB.SF,United Kingdom,Administrative County,East,12602142,1.06039,Suffolk,Suffolk,UK39,52.159,SF,Administrative County,Suffolk,NA,NA,
+admin1,gb-mw,MW,9,GB-MDW,GB.MW,United Kingdom,Unitary Authority,South East,12696177,0.584221,Kent,Medway,UK24,51.3541,MW,Unitary Authority,Medway,Medway Towns,NA,E06000035
+admin1,gb-lu,LU,9,GB-LUT,GB.LU,United Kingdom,Unitary Authority,East,12696155,-0.406249,Bedfordshire,Luton Borough,UK02,51.8763,LU,Unitary Authority,Luton,NA,NA,E06000032
+admin1,gb-wl,WL,9,GB-WIL,GB.WL,United Kingdom,Unitary Single-Tier County,South West,12602186,-1.91891,Wiltshire,Wiltshire,UK46,51.3289,WL,Unitary Single-Tier County,Wiltshire,NA,NA,E06000054
+admin1,gb-3271,SI,9,GB-ZET,GB.AR,United Kingdom,Unitary District (city),Highlands and Islands,12602206,-1.23858,The Islands,Shetland Islands,UK83,60.3097,NA,Unitary District (city),Shetland Islands,Aberdeen City,NA,
+__separator_lines__,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,
