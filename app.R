@@ -44,10 +44,6 @@ library(tidyverse)
   # add population data
   path <- "population"
   population <- read_feather(path)
-  #write_csv(population, "population.csv")
-
-  # map data
-  #mapdata <- read_csv("mapdata_light.csv")
 
 
 
@@ -167,6 +163,7 @@ library(tidyverse)
   hm_l = local %>% select(area_name, day, cases) %>%
     spread(day, cases) %>% ungroup()
   
+  
   hm_l = hm_l %>% remove_rownames %>%
     column_to_rownames(var="area_name")
   
@@ -191,14 +188,22 @@ ui <- dashboardPage(
       theme = "grey_dark"
     ),
     
+    tags$head(tags$style(HTML('
+    /* toggle button when hovered  */                    
+         .skin-blue .main-header .navbar .sidebar-toggle
+         {color: #FFFFFF;}
+         .selectize-dropdown, .selectize-input, .selectize-input input  
+         {color: #FFFFFF;}'
+                              )
+                         )
+              ),
+    
     tabItems(
 
-      
       ### page 1
       
       tabItem(tabName = "dashboard",
-      h2("Dashboard tab content"),
-      
+
       fluidRow(
         box(width = 3, title = "total cases", valueBoxOutput("box_total_eng"), background = "red"),
         box(width = 3, title = "cases last week", valueBoxOutput("box_lw_eng"), background = "red"),
@@ -210,25 +215,27 @@ ui <- dashboardPage(
       # Boxes need to be put in a row (or column)
       fluidRow(
         
-        box(width = 12,
+        box(width = 6,
             valueBoxOutput("box"),
             title = "Choose your borough:",
             selectInput(inputId = "area_name", label = (""), choices = unique(local$area_name), selected = 'Reading', width = "200px"),
             
-            plotlyOutput(outputId = "plot", height = "400px"))
-        
-      ),
-      
-      fluidRow(      
-        box(width = 6,
-            title = "Timeline of daily cases per region",
-            plotlyOutput(outputId = "plot_map", height = "500px")
-        ),
+            plotlyOutput(outputId = "plot", height = "400px")),
         
         box(width = 6,
             title = "Change in cases in last 2 weeks", status = "primary",
             div(style = 'overflow-x: scroll', 
                 DT::dataTableOutput("table", height = "500px")))
+        
+        
+      ),
+      
+      fluidRow(      
+        box(width = 12,
+            title = "Timeline of daily cases per region",
+            plotlyOutput(outputId = "plot_map", height = "500px")
+        )
+        
       ),
       
       fluidRow(
@@ -257,13 +264,12 @@ ui <- dashboardPage(
       
       
       tabItem(tabName = "map",
-      h2("heatmap"),
+      h2("Timeline of daily cases per authority"),
       
       
       fluidRow(      
-        box(width = 6,
-            title = "Timeline of daily cases per authority",
-            plotlyOutput(outputId = "plot_map2", height = "1000px")
+        box(width = 12,
+            plotlyOutput(outputId = "plot_map2", height = "5000px")
         )
       )
     )
@@ -385,38 +391,76 @@ server <- function(input, output) {
   
   
   
-##################### map
+##################### map regions
   
   
   
   output$plot_map <- renderPlotly({    
   
+    
   
   heatmaply(hm_r, Colv = NULL,
-            xlab = "date", ylab = "") 
+            xlab = "date", ylab = "",
+            scale_fill_gradient_fun = ggplot2::scale_fill_gradient2(
+              mid = "#086375",
+              high = "#fe5d26"), 
+              margins = c(0,50,30,5),
+              showticklabels = c(FALSE, TRUE),
+              show_dendrogram = c(FALSE,FALSE),
+              heatmap_layers = theme(
+                panel.background = element_rect(fill = "transparent",colour = NA),
+                plot.background = element_rect(fill = "transparent",colour = NA),
+                legend.background = element_rect(fill = "transparent",colour = NA),
+                axis.text.y =  element_text(colour = "white", size = 8),
+                legend.position = "none"),
+            k_row = 2
+            
+  )
+            
+            
+    
+
   })  
   
 
-##################### map2
+##################### map local
   
   
   
   output$plot_map2 <- renderPlotly({    
     
+
     
-    heatmaply(hm_l, Colv = NULL,
-              xlab = "date", ylab = "")
+    heatmaply(hm_l,
+              Colv = NULL,
+              xlab = "date", ylab = "",
+              scale_fill_gradient_fun = ggplot2::scale_fill_gradient2(
+                mid = "#086375",
+                high = "#fe5d26"), 
+              margins = c(t = 0,130,30,0),
+              showticklabels = c(FALSE, TRUE),
+              show_dendrogram = c(FALSE,FALSE),
+              heatmap_layers = theme(
+                panel.background = element_rect(fill = "transparent",colour = NA),
+                plot.background = element_rect(fill = "transparent",colour = NA),
+                legend.background = element_rect(fill = "transparent",colour = NA),
+                axis.text.y =  element_text(colour = "white", size = 8),
+                legend.position = "none")
+              )
+              
     
-  })  
+    
+  })
   
+  
+
   
   
 ###################### authorities table
   
   output$table <- DT::renderDataTable({
     
-#      colnames(tb)[c(1,2,3,4,5,6)] <- paste0('<span style="color:',c("red","black","black","black","black"),'">',colnames(tb)[c(1,2,3,4,5,6)],'</span>')
-    
+
       datatable(tb,
                 options = list(initComplete = JS(
                     "function(settings, json) {",
@@ -429,14 +473,7 @@ server <- function(input, output) {
     })
 
   
-  
-  datatable(head(iris, 20), options = list(
-    initComplete = JS(
-      "function(settings, json) {",
-      "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
-      "}")
-  ))
-  
+
   
 ##################### changes per region  
   
@@ -448,13 +485,15 @@ server <- function(input, output) {
       ggplot() +
       geom_bar(stat = "identity", fill = '#e76f51', aes(x= pct, y= area_name, 
                                                         text = paste(" region:", area_name, "\n", "change in %:", round(pct))))+
-      xlab("date") + ylab("daily cases") +
+      xlab("%") + ylab("") +
       theme(panel.grid.major = element_blank(), 
             panel.grid.minor = element_blank(),
             panel.background = element_rect(fill = "transparent",colour = NA),
             plot.background = element_rect(fill = "transparent",colour = NA),
             axis.title = element_text(colour = "white"),
-            axis.text = element_text(colour = "white"))
+            axis.text = element_text(colour = "white"),
+            axis.text.y =  element_text(size = 8),
+      )
     
     ggplotly(g, tooltip = "text")
   })
@@ -511,7 +550,7 @@ server <- function(input, output) {
     
   g <- england %>%  ggplot()+
     geom_col(fill = '#e76f51', aes(x=day, y=total, text = paste(" date:", day, "\n", "cases:", total))) +
-    xlab("date") + ylab("cases") +
+    xlab("date") + ylab("daily cases") +
     geom_line(color = "white", aes(x=day, y=rollmean(total, 7, na.pad=TRUE))) +
     theme(panel.grid.major = element_blank(), 
           panel.grid.minor = element_blank(),
@@ -526,23 +565,28 @@ server <- function(input, output) {
   
   })
   
+
   
+########### deaths stats in UK    
   output$plot_deaths <- renderPlotly({
     
     g <- deaths_by_nation %>%  ggplot(aes(x=day, y=total, fill = area_name)) +
       geom_col() + 
-      xlab("date") + ylab("deaths") + scale_fill_manual(name = "",values = c( "#2A9D8F", "#F4A261", "#E9C46A", "#E76D4B")) +
+      xlab("date") + ylab("daily deaths") + 
+      scale_fill_manual(name = "",values = c( "#F4A261", "#086375",  "#E9C46A", "#E76D4B")) +
       theme(panel.grid.major = element_blank(), 
             panel.grid.minor = element_blank(),
             panel.background = element_rect(fill = "transparent",colour = NA),
             plot.background = element_rect(fill = "transparent",colour = NA),
+            legend.background = element_blank(),
+            legend.text = element_text(colour = "white"),
             axis.title = element_text(colour = "white"),
             axis.text = element_text(colour = "white"))
     
     
     
     ggplotly(g)   %>%
-      layout(legend = list(orientation = "h", x = 0.2, y = -0.1)
+      layout(legend = list(orientation = "h", x = 0, y = 1)
       )
     
     
