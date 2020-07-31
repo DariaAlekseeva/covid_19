@@ -47,7 +47,7 @@ library(tidyverse)
   #write_csv(population, "population.csv")
 
   # map data
-  mapdata <- read_csv("mapdata_light.csv")
+  #mapdata <- read_csv("mapdata_light.csv")
 
 
 
@@ -106,11 +106,6 @@ library(tidyverse)
 
   compare_weeks[compare_weeks$delta_pct == Inf,]$delta_pct <- 100
   
-  # join mapdata, pupulation and cases
-  
-  mapdata <- left_join(mapdata, compare_weeks, by = "id") 
- # mapdata = filter(mapdata, !is.na(cases_per_100k_past2weeks))
-  
   
 
   # get all local authorities which had Covid cases
@@ -158,15 +153,25 @@ library(tidyverse)
   
   # heat map data
   
-  hm = regions %>% select(area_name, day, cases) %>%
+  hm_r = regions %>% select(area_name, day, cases) %>%
     spread(day, cases) %>% ungroup()
   
-  hm = hm %>% remove_rownames %>%
+  hm_r = hm_r %>% remove_rownames %>%
     column_to_rownames(var="area_name")
   
   
-  hm[is.na(hm)] = 0
+  hm_r[is.na(hm_r)] = 0
   
+  # heat map per authority
+  
+  hm_l = local %>% select(area_name, day, cases) %>%
+    spread(day, cases) %>% ungroup()
+  
+  hm_l = hm_l %>% remove_rownames %>%
+    column_to_rownames(var="area_name")
+  
+  
+  hm_l[is.na(hm_l)] = 0
   
   
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------  
@@ -175,72 +180,96 @@ library(tidyverse)
 
 ui <- dashboardPage(
   dashboardHeader(title = "Covid-19 in England"),
-  dashboardSidebar(disable = TRUE  
-#    sidebarMenu(
-#      menuItem("Dashboard", tabName = "dashboard", icon = icon("dashboard")),
-#      menuItem("Map", tabName = "map", icon = icon("map"))
-#    )
+  dashboardSidebar(  
+    sidebarMenu(
+      menuItem("Dashboard", tabName = "dashboard", icon = icon("dashboard")),
+      menuItem("Heatmap by authority", tabName = "map", icon = icon("map"))
+    )
   ),
   dashboardBody(
     shinyDashboardThemes(
       theme = "grey_dark"
     ),
     
-    
-    fluidRow(
-      box(width = 3, title = "total cases", valueBoxOutput("box_total_eng"), background = "red"),
-      box(width = 3, title = "cases last week", valueBoxOutput("box_lw_eng"), background = "red"),
-      box(width = 3, title = "total deaths", valueBoxOutput("box_total_d_eng"), background = "red"),
-      box(width = 3, title = "deaths last week", valueBoxOutput("box_lw_d_eng"), background = "red")
-      
-    ),
-    
-    # Boxes need to be put in a row (or column)
-    fluidRow(
+    tabItems(
 
-      box(width = 12,
-          valueBoxOutput("box"),
-          title = "Choose your borough:",
-        selectInput(inputId = "area_name", label = (""), choices = unique(local$area_name), selected = 'Reading', width = "200px"),
-
-        plotlyOutput(outputId = "plot", height = "400px"))
       
+      ### page 1
+      
+      tabItem(tabName = "dashboard",
+      h2("Dashboard tab content"),
+      
+      fluidRow(
+        box(width = 3, title = "total cases", valueBoxOutput("box_total_eng"), background = "red"),
+        box(width = 3, title = "cases last week", valueBoxOutput("box_lw_eng"), background = "red"),
+        box(width = 3, title = "total deaths", valueBoxOutput("box_total_d_eng"), background = "red"),
+        box(width = 3, title = "deaths last week", valueBoxOutput("box_lw_d_eng"), background = "red")
+        
       ),
-    
-    fluidRow(      
-      box(width = 6,
-          title = "Cases per 100,000 population in last 2 weeks",
-          plotlyOutput(outputId = "plot_map", height = "400px")
-          ),
-    
-      box(width = 6,
-          title = "Change in cases in last 2 weeks", status = "primary",
-          div(style = 'overflow-x: scroll', 
-              DT::dataTableOutput("table", height = "400px")))
+      
+      # Boxes need to be put in a row (or column)
+      fluidRow(
+        
+        box(width = 12,
+            valueBoxOutput("box"),
+            title = "Choose your borough:",
+            selectInput(inputId = "area_name", label = (""), choices = unique(local$area_name), selected = 'Reading', width = "200px"),
+            
+            plotlyOutput(outputId = "plot", height = "400px"))
+        
       ),
-    
-    fluidRow(
       
-      box(width = 6, 
-          title = "Change in cases from previous week, %",
-          plotlyOutput("plot_rg_change")
-          ),
+      fluidRow(      
+        box(width = 6,
+            title = "Timeline of daily cases per region",
+            plotlyOutput(outputId = "plot_map", height = "500px")
+        ),
+        
+        box(width = 6,
+            title = "Change in cases in last 2 weeks", status = "primary",
+            div(style = 'overflow-x: scroll', 
+                DT::dataTableOutput("table", height = "500px")))
+      ),
       
-      box(width = 6,
-        valueBoxOutput("box_rg"),
-        title = "Choose your region:",
-        selectInput(inputId = "area_name_rg", label = (""), choices = unique(regions$area_name), selected = 'London', width = "200px"),
-        plotlyOutput(outputId = "plot_rg", height = '400px'))
-    ),
+      fluidRow(
+        
+        box(width = 6, 
+            title = "Change in cases from previous week, %",
+            plotlyOutput("plot_rg_change", height = '500px')
+        ),
+        
+        box(width = 6,
+            valueBoxOutput("box_rg"),
+            title = "Choose your region:",
+            selectInput(inputId = "area_name_rg", label = (""), choices = unique(regions$area_name), selected = 'London', width = "200px"),
+            plotlyOutput(outputId = "plot_rg", height = '400px'))
+      ),
+      
+      fluidRow(
+        box(title = "Daily cases in England",
+            plotlyOutput(outputId = "plot_eng_daily", height = '400px')),
+        box(title = "UK deaths by nation",
+            plotlyOutput(outputId = "plot_deaths", height = '400px'))
+      )),
     
-    fluidRow(
-      box(title = "Daily cases in England",
-        plotlyOutput(outputId = "plot_eng_daily", height = '400px')),
-      box(title = "UK deaths by nation",
-        plotlyOutput(outputId = "plot_deaths", height = '400px'))
-    )
+      
+      ### page 2
+      
+      
+      tabItem(tabName = "map",
+      h2("heatmap"),
+      
+      
+      fluidRow(      
+        box(width = 6,
+            title = "Timeline of daily cases per authority",
+            plotlyOutput(outputId = "plot_map2", height = "1000px")
+        )
+      )
     )
   )
+)
+)  
 
 
 server <- function(input, output) { 
@@ -363,21 +392,51 @@ server <- function(input, output) {
   output$plot_map <- renderPlotly({    
   
   
-  heatmaply(hm, Colv = NULL,
-            xlab = "date", ylab = "", main = "Timeline of daily cases per region")
-  
+  heatmaply(hm_r, Colv = NULL,
+            xlab = "date", ylab = "") 
   })  
   
 
+##################### map2
+  
+  
+  
+  output$plot_map2 <- renderPlotly({    
+    
+    
+    heatmaply(hm_l, Colv = NULL,
+              xlab = "date", ylab = "")
+    
+  })  
+  
+  
   
 ###################### authorities table
   
   output$table <- DT::renderDataTable({
-      datatable(tb) %>%
-      DT::formatStyle(columns = c("area", "last week", "2 weeks ago", 
-                                  "delta, n of cases", "delta, %",  "cases per 100k in last 2 weeks"), color="white")
+    
+#      colnames(tb)[c(1,2,3,4,5,6)] <- paste0('<span style="color:',c("red","black","black","black","black"),'">',colnames(tb)[c(1,2,3,4,5,6)],'</span>')
+    
+      datatable(tb,
+                options = list(initComplete = JS(
+                    "function(settings, json) {",
+                    "$(this.api().table().header()).css({'background-color': '#40434F', 'color': '#fff'});",
+                    "}")
+                )
+                ) %>%
+      DT::formatStyle(columns = colnames(tb)[c(1,2,3,4,5,6)], color="white")
+    
     })
 
+  
+  
+  datatable(head(iris, 20), options = list(
+    initComplete = JS(
+      "function(settings, json) {",
+      "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
+      "}")
+  ))
+  
   
 ##################### changes per region  
   
@@ -387,7 +446,8 @@ server <- function(input, output) {
     g <- 
       cases_per_regions %>% 
       ggplot() +
-      geom_bar(stat = "identity", fill = '#e76f51', aes(x= pct, y= area_name, text = paste(" region:", area_name, "\n", "change in %:", pct)))+
+      geom_bar(stat = "identity", fill = '#e76f51', aes(x= pct, y= area_name, 
+                                                        text = paste(" region:", area_name, "\n", "change in %:", round(pct))))+
       xlab("date") + ylab("daily cases") +
       theme(panel.grid.major = element_blank(), 
             panel.grid.minor = element_blank(),
@@ -396,7 +456,7 @@ server <- function(input, output) {
             axis.title = element_text(colour = "white"),
             axis.text = element_text(colour = "white"))
     
-    ggplotly(g)
+    ggplotly(g, tooltip = "text")
   })
     
 
