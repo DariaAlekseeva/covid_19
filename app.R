@@ -58,8 +58,13 @@ library(tidyverse)
 
 
   # define 1 and 2 weeks ago
-
-  one_week_ago = isoweek(Sys.Date()) - 1
+  
+  if (weekdays(Sys.Date()) == "Monday") {
+    one_week_ago = isoweek(Sys.Date()) - 2
+    } else {
+      one_week_ago = isoweek(Sys.Date()) - 1
+    }
+  
   two_weeks_ago = one_week_ago - 1
 
 
@@ -223,7 +228,7 @@ ui <- dashboardPage(
             plotlyOutput(outputId = "plot", height = "400px")),
         
         box(width = 6,
-            title = "Change in cases in last 2 weeks", status = "primary",
+            title = "Which area is at the highest risk of lockdown?", status = "primary",
             div(style = 'overflow-x: scroll', 
                 DT::dataTableOutput("table", height = "500px")))
         
@@ -253,7 +258,7 @@ ui <- dashboardPage(
       ),
       
       fluidRow(
-        box(title = "Daily cases in England",
+        box(title = "Daily cases in England, total",
             plotlyOutput(outputId = "plot_eng_daily", height = '400px')),
         box(title = "UK deaths by nation",
             plotlyOutput(outputId = "plot_deaths", height = '400px'))
@@ -567,13 +572,15 @@ server <- function(input, output) {
   
 
   
-########### deaths stats in UK    
+########### deaths stats in UK
+  
   output$plot_deaths <- renderPlotly({
     
-    g <- deaths_by_nation %>%  ggplot(aes(x=day, y=total, fill = area_name)) +
-      geom_col() + 
+    g <- deaths_by_nation %>%  
+      ggplot(aes(x=day, y=total, color = area_name)) +
+      geom_line() + 
       xlab("date") + ylab("daily deaths") + 
-      scale_fill_manual(name = "",values = c( "#F4A261", "#086375",  "#E9C46A", "#E76D4B")) +
+      scale_color_manual(name = "",values = c("#E76D4B", "#9f98c3", "#086375",  "#E9C46A" )) +
       theme(panel.grid.major = element_blank(), 
             panel.grid.minor = element_blank(),
             panel.background = element_rect(fill = "transparent",colour = NA),
