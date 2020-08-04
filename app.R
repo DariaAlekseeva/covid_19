@@ -82,7 +82,7 @@ library(tidyverse)
   # create comparison table between two past weeks
 
   compare_weeks = cases %>%
-    dplyr::filter(area_type == "Lower tier local authority") %>%
+    dplyr::filter(area_type == "ltla") %>%
     dplyr::group_by(area_name, id, date_range) %>%
     dplyr::summarise(total = sum(cases)) %>%
     spread(date_range, total)
@@ -112,7 +112,7 @@ library(tidyverse)
   # get all local authorities which had Covid cases
 
   local = cases %>%
-    filter(area_type == "Lower tier local authority")
+    filter(area_type == "ltla")
   
   
   # this is table data to output as table
@@ -126,10 +126,10 @@ library(tidyverse)
   
   # this data is for regions plot
   
-  regions = cases %>% dplyr::filter(area_type=='Region')
+  regions = cases %>% dplyr::filter(area_type=='region')
   
   cases_per_regions = cases %>% 
-    dplyr::filter(area_type == "Region") %>% 
+    dplyr::filter(area_type == "region") %>% 
     dplyr::group_by(date_range, area_name) %>% 
     dplyr::summarise(total = sum(cases)) %>%
     spread(date_range, total) %>%
@@ -140,13 +140,13 @@ library(tidyverse)
   
   # England cases daily
   
-  england = cases %>% dplyr::filter(area_type=='Nation') %>%
+  england = cases %>% dplyr::filter(area_type=='nation') %>%
     dplyr::group_by(day) %>% 
     dplyr::summarise(total = sum(cases))
   
   # deaths by nation
   
-  deaths_by_nation = deaths %>% dplyr::filter(area_type=='Nation') %>%
+  deaths_by_nation = deaths %>% dplyr::filter(area_type=='nation') %>%
     dplyr::group_by(day, area_name) %>% 
     dplyr::summarise(total = sum(deaths))
   
@@ -290,7 +290,7 @@ server <- function(input, output) {
   
   output$box_total_eng<- renderValueBox({
     
-  england <- cases %>% filter(area_type=='Nation')
+  england <- cases %>% filter(area_type=='nation')
   total_cases = england[which.max(england$day),]
   
   valueBox(as.character(total_cases$`Cumulative lab-confirmed cases`))
@@ -300,7 +300,7 @@ server <- function(input, output) {
   
   output$box_lw_eng<- renderValueBox({
     
-    england <- cases %>% dplyr::filter(area_type=='Nation') %>%
+    england <- cases %>% dplyr::filter(area_type=='nation') %>%
       dplyr::group_by(date_range) %>% 
       dplyr::summarise(total = sum(cases)) %>%
       spread(date_range, total) 
@@ -317,7 +317,7 @@ server <- function(input, output) {
   
   output$box_total_d_eng<- renderValueBox({
     
-    england <- deaths %>% filter(area_type=='Nation', area_name == 'England')
+    england <- deaths %>% filter(area_type=='nation', area_name == 'England')
     total_deaths = england[which.max(england$day),]
     
     valueBox(as.character(total_deaths$`Cumulative deaths`))
@@ -327,7 +327,7 @@ server <- function(input, output) {
   ################### Last week England deaths
   
   output$box_lw_d_eng<- renderValueBox({
-    england <- deaths %>% dplyr::filter(area_type=='Nation', area_name == 'England') %>%
+    england <- deaths %>% dplyr::filter(area_type=='nation', area_name == 'England') %>%
       dplyr::group_by(date_range) %>% 
       dplyr::summarise(total = sum(deaths)) %>%
       spread(date_range, total) 
