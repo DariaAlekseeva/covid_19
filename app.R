@@ -59,7 +59,7 @@ library(tidyverse)
 
   # define 1 and 2 weeks ago
   
-  if (weekdays(Sys.Date()) == "Monday") {
+  if (weekdays(Sys.Date()) %in%  c("Monday", "Tuesday")) {
     one_week_ago = isoweek(Sys.Date()) - 2
     } else {
       one_week_ago = isoweek(Sys.Date()) - 1
@@ -228,7 +228,7 @@ ui <- dashboardPage(
             plotlyOutput(outputId = "plot", height = "400px")),
         
         box(width = 6,
-            title = "Which area is at the highest risk of lockdown?", status = "primary",
+            title = "Which areas have the highest risk of lockdown?", status = "primary",
             div(style = 'overflow-x: scroll', 
                 DT::dataTableOutput("table", height = "500px")))
         
