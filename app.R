@@ -103,7 +103,12 @@ library(tidyverse)
 
   compare_weeks[is.na(compare_weeks)] <- 0
   
-  compare_weeks$cases_per_100k_past2weeks = round((compare_weeks$last_week+compare_weeks$two_weeks_ago)/compare_weeks$X2018 * 100000,0)
+  compare_weeks =
+  compare_weeks %>% mutate(
+    
+    cases_per_100k_past2weeks = round((last_week+two_weeks_ago)/compare_weeks$X2018 * 100000,0),
+    delta_100k = round((last_week - two_weeks_ago) / X2018 * 100000,1)
+  )
 
   compare_weeks[compare_weeks$delta_pct == Inf,]$delta_pct <- 100
   
@@ -119,9 +124,10 @@ library(tidyverse)
   tb = 
     compare_weeks %>% 
     ungroup() %>% 
-    select(area_name, last_week, two_weeks_ago, delta, delta_pct, cases_per_100k_past2weeks) %>% 
+    select(delta_100k, area_name, last_week, two_weeks_ago, delta, cases_per_100k_past2weeks) %>% 
     dplyr::rename(area = "area_name", `last week` = "last_week", `2 weeks ago` = "two_weeks_ago", `delta, n of cases` = "delta",
-                  `delta, %` = "delta_pct", `cases per 100k in last 2 weeks` = "cases_per_100k_past2weeks") %>%  arrange(-`delta, n of cases`)
+                   `cases per 100k population in last 2 weeks` = "cases_per_100k_past2weeks", `2 weeks' delta per 100k population` = "delta_100k") %>%  
+    arrange(-`2 weeks' delta per 100k population`)
   
   
   # this data is for regions plot
@@ -152,28 +158,7 @@ library(tidyverse)
   
   
   
-  # heat map data
   
-  hm_r = regions %>% select(area_name, day, cases) %>%
-    spread(day, cases) %>% ungroup()
-  
-  hm_r = hm_r %>% remove_rownames %>%
-    column_to_rownames(var="area_name")
-  
-  
-  hm_r[is.na(hm_r)] = 0
-  
-  # heat map per authority
-  
-  hm_l = local %>% select(area_name, day, cases) %>%
-    spread(day, cases) %>% ungroup()
-  
-  
-  hm_l = hm_l %>% remove_rownames %>%
-    column_to_rownames(var="area_name")
-  
-  
-  hm_l[is.na(hm_l)] = 0
   
   
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------  
@@ -238,6 +223,7 @@ ui <- dashboardPage(
       fluidRow(      
         box(width = 12,
             title = "Timeline of daily cases per region",
+            dateRangeInput(inputId = "day", label = ("Filter by date to explore how regions affect one another:"), start  = min(regions$day), weekstart = 1),
             plotlyOutput(outputId = "plot_map", height = "500px")
         )
         
@@ -274,6 +260,7 @@ ui <- dashboardPage(
       
       fluidRow(      
         box(width = 12,
+            dateRangeInput(inputId = "day_l", label = ("Filter by date to explore how areas affect one another:"), start  = min(local$day), weekstart = 1),
             plotlyOutput(outputId = "plot_map2", height = "5000px")
         )
       )
@@ -399,9 +386,24 @@ server <- function(input, output) {
 ##################### map regions
   
   
+  regions_filtered<- reactive({
+    regions %>% dplyr::filter(regions$day >= input$day[1] & regions$day <= input$day[2]) 
+  })
+  
+
   
   output$plot_map <- renderPlotly({    
   
+    # heat map data
+    
+    hm_r = regions_filtered() %>% select(area_name, day, cases) %>%
+      spread(day, cases) %>% ungroup()
+    
+    hm_r = hm_r %>% remove_rownames %>%
+      column_to_rownames(var="area_name")
+    
+    
+    hm_r[is.na(hm_r)] = 0
     
   
   heatmaply(hm_r, Colv = NULL,
@@ -430,11 +432,28 @@ server <- function(input, output) {
 
 ##################### map local
   
+  local_filtered<- reactive({
+    local %>% dplyr::filter(local$day >= input$day_l[1] & local$day <= input$day_l[2]) 
+  })
+  
   
   
   output$plot_map2 <- renderPlotly({    
     
 
+    # heat map per authority
+    
+    hm_l = local_filtered() %>% select(area_name, day, cases) %>%
+      spread(day, cases) %>% ungroup()
+    
+    
+    hm_l = hm_l %>% remove_rownames %>%
+      column_to_rownames(var="area_name")
+    
+    
+    hm_l[is.na(hm_l)] = 0
+    
+    
     
     heatmaply(hm_l,
               Colv = NULL,
@@ -473,7 +492,8 @@ server <- function(input, output) {
                     "}")
                 )
                 ) %>%
-      DT::formatStyle(columns = colnames(tb)[c(1,2,3,4,5,6)], color="white")
+      DT::formatStyle(columns = colnames(tb)[c(1,2,3,4,5)], color="white") %>%
+      DT::formatStyle(columns = colnames(tb)[c(6)], color="#fe5d26")
     
     })
 
