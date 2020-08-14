@@ -30,6 +30,8 @@ library(tidyverse)
 
 
 
+
+
 ### DATA PROCESSING
 #---------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -37,7 +39,7 @@ library(tidyverse)
   cases <- read_csv('https://coronavirus.data.gov.uk/downloads/csv/coronavirus-cases_latest.csv')
 
   # deaths data
-  deaths <- read_csv('https://coronavirus.data.gov.uk/downloads/csv/coronavirus-deaths_latest.csv')
+#  deaths <- read_csv('https://coronavirus.data.gov.uk/downloads/csv/coronavirus-deaths_latest.csv')
 
   # England population data
 
@@ -52,8 +54,8 @@ library(tidyverse)
   cases <- cases %>%
     dplyr::rename(cases=`Daily lab-confirmed cases`, day =`Specimen date`, area_name='Area name', area_type = `Area type`, id = `Area code`)
 
-  deaths <- deaths %>%
-    dplyr::rename(deaths=`Daily change in deaths`, day =`Reporting date`, area_name='Area name', area_type = `Area type`)
+#  deaths <- deaths %>%
+#    dplyr::rename(deaths=`Daily change in deaths`, day =`Reporting date`, area_name='Area name', area_type = `Area type`)
 
 
 
@@ -74,9 +76,9 @@ library(tidyverse)
                                   isoweek(day) == two_weeks_ago ~ "two_weeks_ago"))
 
 
-  deaths <- deaths %>%
-    mutate(date_range = case_when(isoweek(day) == one_week_ago ~ "last_week",
-                                  isoweek(day) == two_weeks_ago ~ "two_weeks_ago"))
+#  deaths <- deaths %>%
+#    mutate(date_range = case_when(isoweek(day) == one_week_ago ~ "last_week",
+#                                  isoweek(day) == two_weeks_ago ~ "two_weeks_ago"))
 
 
   # create comparison table between two past weeks
@@ -124,7 +126,7 @@ library(tidyverse)
   tb = 
     compare_weeks %>% 
     ungroup() %>% 
-    select(delta_100k, area_name, last_week, two_weeks_ago, delta, cases_per_100k_past2weeks) %>% 
+    select(area_name, delta_100k,last_week, two_weeks_ago, delta, cases_per_100k_past2weeks) %>% 
     dplyr::rename(area = "area_name", `last week` = "last_week", `2 weeks ago` = "two_weeks_ago", `delta, n of cases` = "delta",
                    `cases per 100k population in last 2 weeks` = "cases_per_100k_past2weeks", `2 weeks' delta per 100k population` = "delta_100k") %>%  
     arrange(-`2 weeks' delta per 100k population`)
@@ -152,9 +154,9 @@ library(tidyverse)
   
   # deaths by nation
   
-  deaths_by_nation = deaths %>% dplyr::filter(area_type=='nation') %>%
-    dplyr::group_by(day, area_name) %>% 
-    dplyr::summarise(total = sum(deaths))
+#  deaths_by_nation = deaths %>% dplyr::filter(area_type=='nation') %>%
+#    dplyr::group_by(day, area_name) %>% 
+#    dplyr::summarise(total = sum(deaths))
   
   
   
@@ -197,8 +199,13 @@ ui <- dashboardPage(
       fluidRow(
         box(width = 3, title = "total cases", valueBoxOutput("box_total_eng"), background = "red"),
         box(width = 3, title = "cases last week", valueBoxOutput("box_lw_eng"), background = "red"),
-        box(width = 3, title = "total deaths", valueBoxOutput("box_total_d_eng"), background = "red"),
-        box(width = 3, title = "deaths last week", valueBoxOutput("box_lw_d_eng"), background = "red")
+        box(width = 3, title = "total deaths",  "updating...",
+            #valueBoxOutput("box_total_d_eng"), 
+            background = "red"),
+        box(width = 3, title = "deaths last week", 
+            "updating...",
+            #valueBoxOutput("box_lw_d_eng"), 
+            background = "red")
         
       ),
       
@@ -247,7 +254,9 @@ ui <- dashboardPage(
         box(title = "Daily cases in England, total",
             plotlyOutput(outputId = "plot_eng_daily", height = '400px')),
         box(title = "UK deaths by nation",
-            plotlyOutput(outputId = "plot_deaths", height = '400px'))
+            plotlyOutput( "updating...",
+              #outputId = "plot_deaths", 
+              height = '400px'))
       )),
     
       
@@ -492,8 +501,8 @@ server <- function(input, output) {
                     "}")
                 )
                 ) %>%
-      DT::formatStyle(columns = colnames(tb)[c(1,2,3,4,5)], color="white") %>%
-      DT::formatStyle(columns = colnames(tb)[c(6)], color="#fe5d26")
+      DT::formatStyle(columns = colnames(tb)[c(1,3,4,5,6)], color="white") %>%
+      DT::formatStyle(columns = colnames(tb)[c(2)], color="#fe5d26")
     
     })
 
