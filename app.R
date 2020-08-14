@@ -27,7 +27,88 @@ library(feather)
 
 library(heatmaply)
 library(tidyverse)
+library(memoise)
+library(httr)
 
+
+
+
+
+
+#' Extracts paginated data by requesting all of the pages
+#' and combining the results.
+#'
+#' @param filters    API filters. See the API documentations for 
+#'                   additional information.
+#'                   
+#' @param structure  Structure parameter. See the API documentations 
+#'                   for additional information.
+#'                   
+#' @return list      Comprehensive list of dictionaries containing all 
+#'                   the data for the given ``filter`` and ``structure`.`
+get_paginated_data <- function (filters, structure) {
+  
+  endpoint     <- "https://api.coronavirus.data.gov.uk/v1/data"
+  results      <- list()
+  current_page <- 1
+  
+  repeat {
+    
+    httr::GET(
+      url   = endpoint,
+      query = list(
+        filters   = paste(filters, collapse = ";"),
+        structure = jsonlite::toJSON(structure, auto_unbox = TRUE),
+        page      = current_page
+      ),
+      timeout(10)
+    ) -> response
+    
+    # Handle errors:
+    if ( response$status_code >= 400 ) {
+      err_msg = httr::http_status(response)
+      stop(err_msg)
+    } else if ( response$status_code == 204 ) {
+      break
+    }
+    
+    # Convert response from binary to JSON:
+    json_text <- content(response, "text")
+    dt        <- jsonlite::fromJSON(json_text)
+    results   <- rbind(results, dt$data)
+    
+    if ( is.null( dt$pagination$`next` ) ){
+      break
+    }
+    
+    current_page <- current_page + 1;
+    
+  }
+  
+  return(results)
+  
+}
+
+### NATIONS
+
+# Create filters:
+query_filters <- c(
+  "areaType=nation"
+)
+
+# Create the structure as a list or a list of lists:
+query_structure <- list(
+  date       = "date", 
+  name       = "areaName", 
+  code       = "areaCode", 
+  cases      = "newCasesByPublishDate",
+  deaths = "newDeaths28DaysByPublishDate"
+)
+
+result <- get_paginated_data(query_filters, query_structure)
+
+
+deaths <- as.data.frame(result)
 
 
 
@@ -39,7 +120,7 @@ library(tidyverse)
   cases <- read_csv('https://coronavirus.data.gov.uk/downloads/csv/coronavirus-cases_latest.csv')
 
   # deaths data
-#  deaths <- read_csv('https://coronavirus.data.gov.uk/downloads/csv/coronavirus-deaths_latest.csv')
+  #deaths <- read_csv('https://coronavirus.data.gov.uk/downloads/csv/coronavirus-deaths_latest.csv') -- old source
 
   # England population data
 
@@ -54,8 +135,9 @@ library(tidyverse)
   cases <- cases %>%
     dplyr::rename(cases=`Daily lab-confirmed cases`, day =`Specimen date`, area_name='Area name', area_type = `Area type`, id = `Area code`)
 
-#  deaths <- deaths %>%
-#    dplyr::rename(deaths=`Daily change in deaths`, day =`Reporting date`, area_name='Area name', area_type = `Area type`)
+  deaths <- deaths %>%
+    dplyr::rename(day =`date`, area_name='name') %>%
+    mutate(day = as.Date(day))
 
 
 
@@ -76,9 +158,11 @@ library(tidyverse)
                                   isoweek(day) == two_weeks_ago ~ "two_weeks_ago"))
 
 
-#  deaths <- deaths %>%
-#    mutate(date_range = case_when(isoweek(day) == one_week_ago ~ "last_week",
-#                                  isoweek(day) == two_weeks_ago ~ "two_weeks_ago"))
+  deaths <- deaths %>%
+    mutate(date_range = case_when(isoweek(day) == one_week_ago ~ "last_week",
+                                  isoweek(day) == two_weeks_ago ~ "two_weeks_ago"))
+  deaths[is.na(deaths)] <- 0
+  
 
 
   # create comparison table between two past weeks
@@ -154,9 +238,7 @@ library(tidyverse)
   
   # deaths by nation
   
-#  deaths_by_nation = deaths %>% dplyr::filter(area_type=='nation') %>%
-#    dplyr::group_by(day, area_name) %>% 
-#    dplyr::summarise(total = sum(deaths))
+  deaths_by_nation = deaths %>% select(day, area_name, deaths) 
   
   
   
@@ -199,13 +281,8 @@ ui <- dashboardPage(
       fluidRow(
         box(width = 3, title = "total cases", valueBoxOutput("box_total_eng"), background = "red"),
         box(width = 3, title = "cases last week", valueBoxOutput("box_lw_eng"), background = "red"),
-        box(width = 3, title = "total deaths",  "updating...",
-            #valueBoxOutput("box_total_d_eng"), 
-            background = "red"),
-        box(width = 3, title = "deaths last week", 
-            "updating...",
-            #valueBoxOutput("box_lw_d_eng"), 
-            background = "red")
+        box(width = 3, title = "total deaths", valueBoxOutput("box_total_d_eng"), background = "red"),
+        box(width = 3, title = "deaths last week", valueBoxOutput("box_lw_d_eng"), background = "red")
         
       ),
       
@@ -254,8 +331,8 @@ ui <- dashboardPage(
         box(title = "Daily cases in England, total",
             plotlyOutput(outputId = "plot_eng_daily", height = '400px')),
         box(title = "UK deaths by nation",
-            plotlyOutput( "updating...",
-              #outputId = "plot_deaths", 
+            plotlyOutput(
+              outputId = "plot_deaths", 
               height = '400px'))
       )),
     
@@ -313,17 +390,18 @@ server <- function(input, output) {
   
   output$box_total_d_eng<- renderValueBox({
     
-    england <- deaths %>% filter(area_type=='nation', area_name == 'England')
-    total_deaths = england[which.max(england$day),]
+    england <- deaths %>% filter(area_name == 'England')
+
+    total_deaths = sum(england$deaths,na.rm = TRUE)
     
-    valueBox(as.character(total_deaths$`Cumulative deaths`))
+    valueBox(as.character(total_deaths))
   })
   
 
   ################### Last week England deaths
   
   output$box_lw_d_eng<- renderValueBox({
-    england <- deaths %>% dplyr::filter(area_type=='nation', area_name == 'England') %>%
+    england <- deaths %>% dplyr::filter(area_name == 'England') %>%
       dplyr::group_by(date_range) %>% 
       dplyr::summarise(total = sum(deaths)) %>%
       spread(date_range, total) 
@@ -606,7 +684,7 @@ server <- function(input, output) {
   output$plot_deaths <- renderPlotly({
     
     g <- deaths_by_nation %>%  
-      ggplot(aes(x=day, y=total, color = area_name)) +
+      ggplot(aes(x=day, y=deaths, color = area_name, group = area_name)) +
       geom_line() + 
       xlab("date") + ylab("daily deaths") + 
       scale_color_manual(name = "",values = c("#E76D4B", "#9f98c3", "#086375",  "#E9C46A" )) +
