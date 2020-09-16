@@ -196,10 +196,11 @@ deaths <- as.data.frame(result)
     delta_100k = round((last_week - two_weeks_ago) / X2018 * 100000,1)
   )
 
+  if (nrow(compare_weeks[compare_weeks$delta_pct == Inf,])>0) {
   compare_weeks[compare_weeks$delta_pct == Inf,]$delta_pct <- 100
+  }
   
   
-
   # get all local authorities which had Covid cases
 
   local = cases %>%
