@@ -192,7 +192,7 @@ deaths <- as.data.frame(result)
   compare_weeks =
   compare_weeks %>% mutate(
     
-    cases_per_100k_past2weeks = round((last_week+two_weeks_ago)/compare_weeks$X2018 * 100000,0),
+    cases_per_100k_lastweek = round(last_week/compare_weeks$X2018 * 100000,0),
     delta_100k = round((last_week - two_weeks_ago) / X2018 * 100000,1)
   )
 
@@ -211,10 +211,14 @@ deaths <- as.data.frame(result)
   tb = 
     compare_weeks %>% 
     ungroup() %>% 
-    select(area_name, delta_100k,last_week, two_weeks_ago, delta, cases_per_100k_past2weeks) %>% 
-    dplyr::rename(area = "area_name", `last week` = "last_week", `2 weeks ago` = "two_weeks_ago", `delta, n of cases` = "delta",
-                   `cases per 100k population in last 2 weeks` = "cases_per_100k_past2weeks", `2 weeks' delta per 100k population` = "delta_100k") %>%  
-    arrange(-`2 weeks' delta per 100k population`)
+    select(area_name, cases_per_100k_lastweek, delta_100k,last_week, two_weeks_ago, delta) %>% 
+    dplyr::rename(area = "area_name", 
+                  `last week` = "last_week", 
+                  `2 weeks ago` = "two_weeks_ago", 
+                  `delta, n of cases` = "delta",
+                  `cases per 100k population last week` = "cases_per_100k_lastweek", 
+                  `2 weeks' delta per 100k population` = "delta_100k") %>%  
+    arrange(-`cases per 100k population last week`)
   
   
   # this data is for regions plot

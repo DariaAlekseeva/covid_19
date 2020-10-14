@@ -1,13 +1,13 @@
-name: Covid-19_2
-title: Covid-19_2
+name: Covid-19
+title: Covid-19
 username:
 account: dataiseverywhere
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
-appId: 2617961
-bundleId: 3517167
-url: https://dataiseverywhere.shinyapps.io/Covid-19_2/
-when: 1597430936.55825
+appId: 2576322
+bundleId: 3739298
+url: https://dataiseverywhere.shinyapps.io/Covid-19/
+when: 1602676034.50327
 asMultiple: FALSE
 asStatic: FALSE
 ignoredFiles: mapdata_light.csv
