@@ -143,24 +143,21 @@ deaths <- as.data.frame(result)
 
   # define 1 and 2 weeks ago
   
-  if (weekdays(Sys.Date()) %in%  c("Monday", "Tuesday")) {
-    one_week_ago = isoweek(Sys.Date()) - 2
-    } else {
-      one_week_ago = isoweek(Sys.Date()) - 1
-    }
+  one_weeks_ago_end = Sys.Date() - 7
+  one_weeks_ago_start = Sys.Date() - 7*2
+  two_weeks_ago_end = Sys.Date() - 7*2+1
+  two_weeks_ago_start = Sys.Date() - 7*3
   
-  two_weeks_ago = one_week_ago - 1
-
-
+  
   # identify days corresponding to 1 and 2 weeks ago
   cases <- cases %>%
-    mutate(date_range = case_when(isoweek(day) == one_week_ago ~ "last_week",
-                                  isoweek(day) == two_weeks_ago ~ "two_weeks_ago"))
+    mutate(date_range = case_when(day >= one_weeks_ago_start & day < one_weeks_ago_end ~ "last_week",
+                                  day >= two_weeks_ago_start & day < two_weeks_ago_end ~ "two_weeks_ago"))
 
 
   deaths <- deaths %>%
-    mutate(date_range = case_when(isoweek(day) == one_week_ago ~ "last_week",
-                                  isoweek(day) == two_weeks_ago ~ "two_weeks_ago"))
+    mutate(date_range = case_when(day >= one_weeks_ago_start & day < one_weeks_ago_end ~ "last_week",
+                                  day >= two_weeks_ago_start & day < two_weeks_ago_end ~ "two_weeks_ago"))
   deaths[is.na(deaths)] <- 0
   
 
@@ -230,7 +227,7 @@ deaths <- as.data.frame(result)
     dplyr::group_by(date_range, area_name) %>% 
     dplyr::summarise(total = sum(cases)) %>%
     spread(date_range, total) %>%
-    dplyr::select(-"<NA>") %>%
+    dplyr::select(-"<NA>")%>%
     mutate(pct = (last_week - two_weeks_ago)/two_weeks_ago*100)
   
   

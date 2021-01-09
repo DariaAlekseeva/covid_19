@@ -5,9 +5,9 @@ account: dataiseverywhere
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 2576322
-bundleId: 3739298
+bundleId: 4075878
 url: https://dataiseverywhere.shinyapps.io/Covid-19/
-when: 1602676034.50327
+when: 1610200602.137
 asMultiple: FALSE
 asStatic: FALSE
 ignoredFiles: mapdata_light.csv
