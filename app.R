@@ -93,7 +93,7 @@ get_paginated_data <- function (filters, structure) {
 
 # Create filters:
 query_filters <- c(
-  "areaType=nation"
+  "areaType=utla"
 )
 
 # Create the structure as a list or a list of lists:
@@ -108,7 +108,31 @@ query_structure <- list(
 result <- get_paginated_data(query_filters, query_structure)
 
 
-deaths <- as.data.frame(result)
+deaths_cases <- as.data.frame(result)
+
+
+# for regional data
+# Create filters:
+query_filters <- c(
+  "areaType=region"
+)
+
+result <- get_paginated_data(query_filters, query_structure)
+
+
+deaths_cases_region <- as.data.frame(result)
+
+
+# for national data
+# Create filters:
+query_filters <- c(
+  "areaType=region"
+)
+
+result <- get_paginated_data(query_filters, query_structure)
+
+
+deaths_cases_nation <- as.data.frame(result)
 
 
 
@@ -117,7 +141,7 @@ deaths <- as.data.frame(result)
 #---------------------------------------------------------------------------------------------------------------------------------------------------
 
   # cases data
-  cases <- read_csv('https://coronavirus.data.gov.uk/downloads/csv/coronavirus-cases_latest.csv')
+  #cases <- read_csv('https://coronavirus.data.gov.uk/downloads/csv/coronavirus-cases_latest.csv')
 
   # deaths data
   #deaths <- read_csv('https://coronavirus.data.gov.uk/downloads/csv/coronavirus-deaths_latest.csv') -- old source
@@ -132,15 +156,23 @@ deaths <- as.data.frame(result)
 
   # rename columns
 
-  cases <- cases %>%
-    dplyr::rename(cases=`Daily lab-confirmed cases`, day =`Specimen date`, area_name='Area name', area_type = `Area type`, id = `Area code`)
+#  cases <- cases %>%
+#    dplyr::rename(cases=`Daily lab-confirmed cases`, day =`Specimen date`, area_name='Area name', area_type = `Area type`, id = `Area code`)
 
-  deaths <- deaths %>%
-    dplyr::rename(day =`date`, area_name='name') %>%
+  deaths_cases <- deaths_cases %>%
+    dplyr::rename(day =`date`, area_name='name', id='code') %>%
     mutate(day = as.Date(day))
 
 
+  deaths_cases_region <- deaths_cases_region %>%
+    dplyr::rename(day =`date`, area_name='name', id='code') %>%
+    mutate(day = as.Date(day))
+  
 
+  deaths_cases_nation <- deaths_cases_nation %>%
+    dplyr::rename(day =`date`, area_name='name', id='code') %>%
+    mutate(day = as.Date(day))
+  
   # define 1 and 2 weeks ago
   
   one_weeks_ago_end = Sys.Date() - 7
@@ -150,22 +182,33 @@ deaths <- as.data.frame(result)
   
   
   # identify days corresponding to 1 and 2 weeks ago
-  cases <- cases %>%
-    mutate(date_range = case_when(day >= one_weeks_ago_start & day < one_weeks_ago_end ~ "last_week",
-                                  day >= two_weeks_ago_start & day < two_weeks_ago_end ~ "two_weeks_ago"))
+#  cases <- cases %>%
+#    mutate(date_range = case_when(day >= one_weeks_ago_start & day < one_weeks_ago_end ~ "last_week",
+#                                  day >= two_weeks_ago_start & day < two_weeks_ago_end ~ "two_weeks_ago"))
 
 
-  deaths <- deaths %>%
+  deaths_cases <- deaths_cases %>%
     mutate(date_range = case_when(day >= one_weeks_ago_start & day < one_weeks_ago_end ~ "last_week",
                                   day >= two_weeks_ago_start & day < two_weeks_ago_end ~ "two_weeks_ago"))
-  deaths[is.na(deaths)] <- 0
+  deaths_cases[is.na(deaths_cases)] <- 0
   
 
+  deaths_cases_region <- deaths_cases_region %>%
+    mutate(date_range = case_when(day >= one_weeks_ago_start & day < one_weeks_ago_end ~ "last_week",
+                                  day >= two_weeks_ago_start & day < two_weeks_ago_end ~ "two_weeks_ago"))
+  deaths_cases_region[is.na(deaths_cases_region)] <- 0
 
+    
+  deaths_cases_nation <- deaths_cases_nation %>%
+    mutate(date_range = case_when(day >= one_weeks_ago_start & day < one_weeks_ago_end ~ "last_week",
+                                  day >= two_weeks_ago_start & day < two_weeks_ago_end ~ "two_weeks_ago"))
+  deaths_cases_nation[is.na(deaths_cases_nation)] <- 0
+  
+  
   # create comparison table between two past weeks
 
-  compare_weeks = cases %>%
-    dplyr::filter(area_type == "ltla") %>%
+  compare_weeks = deaths_cases %>%
+#    dplyr::filter(area_type == "ltla") %>%
     dplyr::group_by(area_name, id, date_range) %>%
     dplyr::summarise(total = sum(cases)) %>%
     spread(date_range, total)
@@ -176,8 +219,8 @@ deaths <- as.data.frame(result)
     compare_weeks %>%
     mutate(delta = last_week - two_weeks_ago,
            delta_pct =  round(((last_week - two_weeks_ago)/two_weeks_ago) * 100,0)) %>%
-    arrange(-delta) %>%
-    dplyr::select(-"<NA>")
+    arrange(-delta) #%>%
+#    dplyr::select(-"<NA>")
 
   compare_weeks[is.na(compare_weeks)] <- 0
 
@@ -200,8 +243,7 @@ deaths <- as.data.frame(result)
   
   # get all local authorities which had Covid cases
 
-  local = cases %>%
-    filter(area_type == "ltla")
+  local = deaths_cases
   
   
   # this is table data to output as table
@@ -220,27 +262,27 @@ deaths <- as.data.frame(result)
   
   # this data is for regions plot
   
-  regions = cases %>% dplyr::filter(area_type=='region')
+  regions = deaths_cases_region
   
-  cases_per_regions = cases %>% 
-    dplyr::filter(area_type == "region") %>% 
+  cases_per_regions = deaths_cases_region %>% 
+    #dplyr::filter(area_type == "region") %>% 
     dplyr::group_by(date_range, area_name) %>% 
     dplyr::summarise(total = sum(cases)) %>%
     spread(date_range, total) %>%
-    dplyr::select(-"<NA>")%>%
+#    dplyr::select(-"<NA>")%>%
     mutate(pct = (last_week - two_weeks_ago)/two_weeks_ago*100)
   
   
   
   # England cases daily
   
-  england = cases %>% dplyr::filter(area_type=='nation') %>%
+  england = deaths_cases_nation %>% 
     dplyr::group_by(day) %>% 
     dplyr::summarise(total = sum(cases))
   
   # deaths by nation
   
-  deaths_by_nation = deaths %>% select(day, area_name, deaths) 
+  deaths_by_nation = deaths_cases_nation %>% select(day, area_name, deaths) 
   
   
   
@@ -332,7 +374,7 @@ ui <- dashboardPage(
       fluidRow(
         box(title = "Daily cases in England, total",
             plotlyOutput(outputId = "plot_eng_daily", height = '400px')),
-        box(title = "UK deaths by nation",
+        box(title = "UK deaths by region",
             plotlyOutput(
               outputId = "plot_deaths", 
               height = '400px'))
@@ -687,9 +729,9 @@ server <- function(input, output) {
     
     g <- deaths_by_nation %>%  
       ggplot(aes(x=day, y=deaths, color = area_name, group = area_name)) +
-      geom_line() + 
+      geom_col(position = 'stack') + 
       xlab("date") + ylab("daily deaths") + 
-      scale_color_manual(name = "",values = c("#E76D4B", "#9f98c3", "#086375",  "#E9C46A" )) +
+      #scale_color_manual(name = "",values = c("#E76D4B", "#9f98c3", "#086375",  "#E9C46A" )) +
       theme(panel.grid.major = element_blank(), 
             panel.grid.minor = element_blank(),
             panel.background = element_rect(fill = "transparent",colour = NA),
